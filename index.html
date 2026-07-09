@@ -7,7 +7,7 @@
     <style>
         /* DÜNYA KUPASI PREMIUM ANA TEMASI */
         :root {
-            --primary-color: #d4af37; /* Varsayılan Altın Sarısı */
+            --primary-color: #d4af37; 
             --navbar-border: #d4af37;
             --banner-gradient: linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%);
         }
@@ -51,10 +51,10 @@
         }
 
         .logo-text {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 900;
-            letter-spacing: 1.5px;
-            color: #ffffff;
+            letter-spacing: 1px;
+            color: #ffffff; 
         }
 
         .nav-links {
@@ -234,6 +234,30 @@
             font-weight: 600;
             font-size: 15px;
         }
+
+        /* 📌 SAĞ EN ALTA SABİTLENEN LİSANS LOGOSU */
+        .bottom-right-logo {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border: 3px solid #ffffff; 
+            border-radius: 50%; 
+            background-color: rgba(11, 17, 32, 0.8); /* Arka planı hafif şeffaf karanlık yaptık ki her temada okunsun */
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            font-weight: 900; 
+            color: #ffffff; 
+            line-height: 1;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px); /* Arka planı hafifçe flulaştırır */
+        }
     </style>
 </head>
 <body>
@@ -242,16 +266,16 @@
     <nav class="navbar">
         <div class="logo-area">
             <div class="logo-badge">FIFA</div>
-            <div class="logo-text">EUROPEAN SOCCER LEAGUE</div>
+            <div class="logo-text">ESL | EUROPEAN SOCCER LEAGUE</div>
         </div>
         <div class="nav-links">
-            <button class="nav-btn active" onclick="openTab(event, 'ana-sayfa', 'default')">Giriş</button>
-            <button class="nav-btn" onclick="openTab(event, 'puan-durumu', 'default')">Gruplar</button>
-            <button class="nav-btn" onclick="openTab(event, 'fikstur', 'fixture')">Fikstür</button>
-            <button class="nav-btn" onclick="openTab(event, 'takimlar', 'teams')">Takımlar</button>
-            <button class="nav-btn" onclick="openTab(event, 'oyuncular', 'default')">Oyuncular</button>
-            <button class="nav-btn" onclick="openTab(event, 'istatistikler', 'default')">İstatistikler</button>
-            <button class="nav-btn" onclick="openTab(event, 'transferler', 'default')">Transferler</button>
+            <button class="nav-btn active" onclick="openTab(event, 'ana-sayfa')">Giriş</button>
+            <button class="nav-btn" onclick="openTab(event, 'puan-durumu')">Gruplar</button>
+            <button class="nav-btn" onclick="openTab(event, 'fikstur')">Fikstür</button>
+            <button class="nav-btn" onclick="openTab(event, 'takimlar')">Takımlar</button>
+            <button class="nav-btn" onclick="openTab(event, 'oyuncular')">Oyuncular</button>
+            <button class="nav-btn" onclick="openTab(event, 'istatistikler')">İstatistikler</button>
+            <button class="nav-btn" onclick="openTab(event, 'transferler')">Transferler</button>
         </div>
     </nav>
 
@@ -364,38 +388,56 @@
 
     </div>
 
+    <!-- 📌 Sağ En Alttaki Lisans Logosu Elemanı -->
+    <div class="bottom-right-logo">R</div>
+
     <script>
-        function openTab(evt, tabId, themeType) {
-            // Tüm sekmeleri gizle
+        // RASTGELE DÜNYA KUPASI 2026 TEMALARI HAVUZU
+        const wcThemes = [
+            {
+                primary: '#d4af37', 
+                border: '#d4af37',
+                gradient: 'linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%)'
+            },
+            {
+                primary: '#dc2626', 
+                border: '#dc2626',
+                gradient: 'linear-gradient(135px, #450a0a 0%, #991b1b 50%, #dc2626 100%)'
+            },
+            {
+                primary: '#10b981', 
+                border: '#10b981',
+                gradient: 'linear-gradient(135px, #064e3b 0%, #047857 50%, #d4af37 100%)'
+            },
+            {
+                primary: '#2563eb', 
+                border: '#2563eb',
+                gradient: 'linear-gradient(135px, #1e1b4b 0%, #4c1d95 50%, #2563eb 100%)'
+            },
+            {
+                primary: '#f97316', 
+                border: '#f97316',
+                gradient: 'linear-gradient(135px, #2a0845 0%, #6414fd 60%, #f97316 100%)'
+            }
+        ];
+
+        function openTab(evt, tabId) {
             let contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
-            // Tüm butonları inaktif yap
             let buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // İlgili sekmeyi aç
             document.getElementById(tabId).classList.add('active');
             evt.currentTarget.classList.add('active');
 
-            // TEMA DEĞİŞTİRME MANTIĞI
+            // HER SEKMEYE TIKLANDIĞINDA RASTGELE TEMA SEÇ
+            const randomTheme = wcThemes[Math.floor(Math.random() * wcThemes.length)];
+            
             let root = document.documentElement;
-            if (themeType === 'fixture') {
-                // Fikstür için Dünya Kupası Kırmızı-Beyaz Teması
-                root.style.setProperty('--primary-color', '#dc2626');
-                root.style.setProperty('--navbar-border', '#dc2626');
-                root.style.setProperty('--banner-gradient', 'linear-gradient(135px, #450a0a 0%, #991b1b 50%, #dc2626 100%)');
-            } else if (themeType === 'teams') {
-                // Takımlar için Dünya Kupası Yeşil-Altın Sarısı Teması
-                root.style.setProperty('--primary-color', '#10b981');
-                root.style.setProperty('--navbar-border', '#10b981');
-                root.style.setProperty('--banner-gradient', 'linear-gradient(135px, #064e3b 0%, #047857 50%, #d4af37 100%)');
-            } else {
-                // Varsayılan Dünya Kupası Altın Sarısı ve Gece Mavisi Teması
-                root.style.setProperty('--primary-color', '#d4af37');
-                root.style.setProperty('--navbar-border', '#d4af37');
-                root.style.setProperty('--banner-gradient', 'linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%)');
-            }
+            root.style.setProperty('--primary-color', randomTheme.primary);
+            root.style.setProperty('--navbar-border', randomTheme.border);
+            root.style.setProperty('--banner-gradient', randomTheme.gradient);
         }
     </script>
 
