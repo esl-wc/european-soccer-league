@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIFA World Cup - ESL Edition</title>
+    <title>EUROPEAN SOCCER LEAGUE - World Cup Center</title>
     <style>
-        /* DÜNYA KUPASI PREMIUM TEMASI */
+        /* DÜNYA KUPASI PREMIUM ANA TEMASI */
+        :root {
+            --primary-color: #d4af37; /* Varsayılan Altın Sarısı */
+            --navbar-border: #d4af37;
+            --banner-gradient: linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%);
+        }
+
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #060913; /* Derin Gece Mavisi */
+            background-color: #060913; 
             color: #ffffff;
+            transition: background 0.3s ease;
         }
 
         /* ÜST MENÜ (NAVBAR) */
@@ -20,11 +27,12 @@
             align-items: center;
             background-color: #0b1120; 
             padding: 15px 40px;
-            border-bottom: 4px solid #d4af37; /* DÜNYA KUPASI ALTIN ÇIZGİSİ */
+            border-bottom: 4px solid var(--navbar-border);
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: border-color 0.3s ease;
         }
 
         .logo-area {
@@ -68,9 +76,9 @@
         }
 
         .nav-links button:hover, .nav-links button.active {
-            color: #d4af37;
+            color: var(--primary-color);
             background-color: #1e293b;
-            border-bottom: 3px solid #d4af37; 
+            border-bottom: 3px solid var(--primary-color); 
         }
 
         /* ANA KONTEYNER */
@@ -88,25 +96,26 @@
             display: block;
         }
 
-        /* DÜNYA KUPASI ÖZEL BANNER */
+        /* BANNER */
         .hero-banner {
-            background: linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%);
+            background: var(--banner-gradient);
             padding: 60px 40px;
             border-radius: 20px;
             text-align: center;
             margin-bottom: 40px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            transition: background 0.3s ease;
         }
 
         .hero-banner h1 {
-            font-size: 50px;
+            font-size: 46px;
             margin: 0 0 12px 0;
             text-transform: uppercase;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             color: #ffffff;
             text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
         }
@@ -119,7 +128,6 @@
             text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
         }
 
-        /* KUPA İKONU DEKORASYON */
         .trophy-icon {
             font-size: 40px;
             margin-bottom: 10px;
@@ -154,24 +162,25 @@
             font-size: 13px;
             color: #94a3b8;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .stat-box p {
             margin: 10px 0 0 0;
             font-size: 32px;
             font-weight: 900;
-            color: #d4af37; 
+            color: var(--primary-color);
+            transition: color 0.3s ease;
         }
 
         /* TABLOLAR VE BAŞLIKLAR */
         h2 {
             font-size: 24px;
             text-transform: uppercase;
-            border-left: 5px solid #d4af37; 
+            border-left: 5px solid var(--primary-color); 
             padding-left: 15px;
             margin-bottom: 25px;
             letter-spacing: 1px;
+            transition: border-color 0.3s ease;
         }
 
         .table-wrapper {
@@ -201,7 +210,6 @@
             font-size: 13px;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         tr:hover {
@@ -234,16 +242,16 @@
     <nav class="navbar">
         <div class="logo-area">
             <div class="logo-badge">FIFA</div>
-            <div class="logo-text">WORLD CUP CENTER</div>
+            <div class="logo-text">EUROPEAN SOCCER LEAGUE</div>
         </div>
         <div class="nav-links">
-            <button class="nav-btn active" onclick="openTab(event, 'ana-sayfa')">Giriş</button>
-            <button class="nav-btn" onclick="openTab(event, 'puan-durumu')">Gruplar</button>
-            <button class="nav-btn" onclick="openTab(event, 'fikstur')">Fikstür</button>
-            <button class="nav-btn" onclick="openTab(event, 'takimlar')">Takımlar</button>
-            <button class="nav-btn" onclick="openTab(event, 'oyuncular')">Oyuncular</button>
-            <button class="nav-btn" onclick="openTab(event, 'istatistikler')">İstatistikler</button>
-            <button class="nav-btn" onclick="openTab(event, 'transferler')">Transferler</button>
+            <button class="nav-btn active" onclick="openTab(event, 'ana-sayfa', 'default')">Giriş</button>
+            <button class="nav-btn" onclick="openTab(event, 'puan-durumu', 'default')">Gruplar</button>
+            <button class="nav-btn" onclick="openTab(event, 'fikstur', 'fixture')">Fikstür</button>
+            <button class="nav-btn" onclick="openTab(event, 'takimlar', 'teams')">Takımlar</button>
+            <button class="nav-btn" onclick="openTab(event, 'oyuncular', 'default')">Oyuncular</button>
+            <button class="nav-btn" onclick="openTab(event, 'istatistikler', 'default')">İstatistikler</button>
+            <button class="nav-btn" onclick="openTab(event, 'transferler', 'default')">Transferler</button>
         </div>
     </nav>
 
@@ -253,7 +261,7 @@
         <div id="ana-sayfa" class="tab-content active">
             <div class="hero-banner">
                 <div class="trophy-icon">🏆</div>
-                <h1>FIFA WORLD CUP</h1>
+                <h1>EUROPEAN SOCCER LEAGUE</h1>
                 <p>Milli Takımlar Sahneye Çıkıyor! Dünya Kupası Heyecanını Canlı Takip Et.</p>
             </div>
 
@@ -311,7 +319,7 @@
             <div class="table-wrapper">
                 <table>
                     <tr>
-                        <th>Ülke</th>
+                        <th>Bayrak</th>
                         <th>Takım Adı</th>
                         <th>Resmi Kadro Durumu</th>
                     </tr>
@@ -357,15 +365,37 @@
     </div>
 
     <script>
-        function openTab(evt, tabId) {
+        function openTab(evt, tabId, themeType) {
+            // Tüm sekmeleri gizle
             let contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
+            // Tüm butonları inaktif yap
             let buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
+            // İlgili sekmeyi aç
             document.getElementById(tabId).classList.add('active');
             evt.currentTarget.classList.add('active');
+
+            // TEMA DEĞİŞTİRME MANTIĞI
+            let root = document.documentElement;
+            if (themeType === 'fixture') {
+                // Fikstür için Dünya Kupası Kırmızı-Beyaz Teması
+                root.style.setProperty('--primary-color', '#dc2626');
+                root.style.setProperty('--navbar-border', '#dc2626');
+                root.style.setProperty('--banner-gradient', 'linear-gradient(135px, #450a0a 0%, #991b1b 50%, #dc2626 100%)');
+            } else if (themeType === 'teams') {
+                // Takımlar için Dünya Kupası Yeşil-Altın Sarısı Teması
+                root.style.setProperty('--primary-color', '#10b981');
+                root.style.setProperty('--navbar-border', '#10b981');
+                root.style.setProperty('--banner-gradient', 'linear-gradient(135px, #064e3b 0%, #047857 50%, #d4af37 100%)');
+            } else {
+                // Varsayılan Dünya Kupası Altın Sarısı ve Gece Mavisi Teması
+                root.style.setProperty('--primary-color', '#d4af37');
+                root.style.setProperty('--navbar-border', '#d4af37');
+                root.style.setProperty('--banner-gradient', 'linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%)');
+            }
         }
     </script>
 
