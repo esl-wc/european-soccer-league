@@ -3,77 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESL | European Soccer League</title>
+    <title>EUROPEAN SOCCER LEAGUE - World Cup Center</title>
     <style>
         :root {
             --primary-color: #1d4ed8; 
+            --navbar-bg: #ffffff;
+            --navbar-border: #e2e8f0;
             --body-bg: #f8fafc; 
-            --text-main: #0f172a;
-        }
-        body { margin: 0; font-family: sans-serif; background-color: var(--body-bg); color: var(--text-main); }
-        
-        .hero-banner {
-            width: 100%;
-            height: 300px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/FIFA_World_Cup_2026_logo.svg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
+            --card-bg: #ffffff;
+            --text-main: #0f172a; 
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --banner-gradient: linear-gradient(135px, #1e3a8a 0%, #3b82f6 100%); 
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: #f1f5f9; text-transform: uppercase; font-size: 12px; }
-        
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--body-bg); color: var(--text-main); }
+
+        .navbar { display: flex; justify-content: space-between; align-items: center; background-color: var(--navbar-bg); padding: 15px 40px; border-bottom: 2px solid var(--navbar-border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-badge { background-color: #1e3a8a; color: #ffffff; padding: 4px 10px; font-weight: 900; border-radius: 4px; font-size: 14px; }
+        .logo-text { font-size: 18px; font-weight: 900; letter-spacing: 1px; color: #1e3a8a; }
+        .nav-links { display: flex; gap: 8px; }
+        .nav-links button { background: none; border: none; color: var(--text-muted); font-size: 13px; font-weight: 700; text-transform: uppercase; cursor: pointer; padding: 10px 16px; border-radius: 6px; transition: all 0.2s ease; }
+        .nav-links button:hover, .nav-links button.active { color: var(--primary-color); background-color: #f1f5f9; border-bottom: 3px solid var(--primary-color); }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
+
+        /* BANNER GÜNCELLEMESİ (FIFA 2026 GÖRSELİN) */
+        .hero-banner {
+            width: 100%;
+            height: 350px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/FIFA_World_Cup_2026_logo.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #0f172a;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .table-wrapper { background-color: var(--card-bg); border-radius: 14px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { background-color: #f1f5f9; color: var(--text-muted); font-size: 13px; text-transform: uppercase; font-weight: 700; }
         
-        button { padding: 10px 20px; cursor: pointer; border: none; background: #e2e8f0; border-radius: 4px; font-weight: bold; }
-        button.active { background: var(--primary-color); color: white; }
+        .pos-badge { background-color: #dc2626; color: white; padding: 4px 8px; font-weight: 700; font-size: 12px; border-radius: 4px; text-transform: uppercase; }
+        .status-badge.signed { background-color: #dcfce7; color: #16a34a; padding: 4px 8px; font-weight: 700; font-size: 12px; border-radius: 4px; }
     </style>
 </head>
 <body>
 
-    <div class="hero-banner"></div>
+    <nav class="navbar">
+        <div class="logo-area">
+            <div class="logo-badge">FIFA</div>
+            <div class="logo-text">ESL | EUROPEAN SOCCER LEAGUE</div>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn active" onclick="openTab(event, 'ana-sayfa')">Giriş</button>
+            <button class="nav-btn" onclick="openTab(event, 'puan-durumu')">Gruplar</button>
+            <button class="nav-btn" onclick="openTab(event, 'takimlar')">Takımlar</button>
+            <button class="nav-btn" onclick="openTab(event, 'transferler')">Transferler</button>
+        </div>
+    </nav>
 
     <div class="container">
-        <div style="margin-bottom: 20px;">
-            <button class="active" onclick="showTab('puan')">Puan Durumu</button>
-            <button onclick="showTab('takim')">Takımlar</button>
+        <div id="ana-sayfa" class="tab-content active">
+            <div class="hero-banner"></div>
         </div>
 
-        <div id="puan" class="tab-content active">
-            <table>
-                <tr><th>#</th><th>Takım Adı</th><th>P</th></tr>
-                <tr><td>1</td><td>FRANCE</td><td>0</td></tr>
-                <tr><td>2</td><td>NETHERLANDS</td><td>0</td></tr>
-                <tr><td>3</td><td>BRAZIL</td><td>0</td></tr>
-                <tr><td>4</td><td>MOROCCO</td><td>0</td></tr>
-                <tr><td>5</td><td>TURKIYE</td><td>0</td></tr>
-            </table>
+        <div id="puan-durumu" class="tab-content">
+            <h2>Grup Puan Durumu</h2>
+            <div class="table-wrapper">
+                <table>
+                    <tr><th>#</th><th>Takım</th><th>P</th></tr>
+                    <tr><td>1</td><td>FRANCE</td><td>0</td></tr>
+                    <tr><td>2</td><td>NETHERLANDS</td><td>0</td></tr>
+                    <tr><td>3</td><td>BRAZIL</td><td>0</td></tr>
+                    <tr><td>4</td><td>MOROCCO</td><td>0</td></tr>
+                    <tr><td>5</td><td>TURKIYE</td><td>0</td></tr>
+                </table>
+            </div>
         </div>
 
-        <div id="takim" class="tab-content">
-            <table>
-                <tr><th>Takım Adı</th></tr>
-                <tr><td>FRANCE</td></tr>
-                <tr><td>NETHERLANDS</td></tr>
-                <tr><td>BRAZIL</td></tr>
-                <tr><td>MOROCCO</td></tr>
-                <tr><td>TURKIYE</td></tr>
-            </table>
+        <div id="takimlar" class="tab-content">
+            <h2>Turnuva Takımları</h2>
+            <div class="table-wrapper">
+                <table>
+                    <tr><th>Takım Adı</th></tr>
+                    <tr><td>FRANCE</td></tr>
+                    <tr><td>NETHERLANDS</td></tr>
+                    <tr><td>BRAZIL</td></tr>
+                    <tr><td>MOROCCO</td></tr>
+                    <tr><td>TURKIYE</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="transferler" class="tab-content">
+            <h2>Milli Takım Kamp Seçimleri</h2>
+            <div class="table-wrapper">
+                <table>
+                    <tr><th>Oyuncu</th><th>Seçtiği Milli Takım</th><th>Durum</th></tr>
+                    <tr><td><b>(Boş)</b></td><td>-</td><td>-</td></tr>
+                </table>
+            </div>
         </div>
     </div>
 
     <script>
-        function showTab(id) {
-            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
+        function openTab(evt, tabId) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
         }
     </script>
 </body>
