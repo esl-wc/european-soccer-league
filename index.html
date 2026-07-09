@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUROPEAN SOCCER LEAGUE - World Cup Center</title>
     <style>
-        /* DÜNYA KUPASI PREMIUM ANA TEMASI */
+        /* BEYAZ TEMA (LIGHT MODE) AYARLARI */
         :root {
-            --primary-color: #d4af37; 
-            --navbar-border: #d4af37;
-            --banner-gradient: linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%);
+            --primary-color: #1d4ed8; /* Canlı Mavi */
+            --navbar-bg: #ffffff;
+            --navbar-border: #e2e8f0;
+            --body-bg: #f8fafc; /* Açık Gri/Beyaz Arka Plan */
+            --card-bg: #ffffff;
+            --text-main: #0f172a; /* Koyu Gri/Siyah Yazı */
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --banner-gradient: linear-gradient(135px, #1e3a8a 0%, #3b82f6 100%); /* Premium Mavi Banner */
         }
 
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #060913; 
-            color: #ffffff;
-            transition: background 0.3s ease;
+            background-color: var(--body-bg); 
+            color: var(--text-main);
         }
 
         /* ÜST MENÜ (NAVBAR) */
@@ -25,14 +30,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #0b1120; 
+            background-color: var(--navbar-bg); 
             padding: 15px 40px;
-            border-bottom: 4px solid var(--navbar-border);
+            border-bottom: 2px solid var(--navbar-border);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            transition: border-color 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo-area {
@@ -42,8 +46,8 @@
         }
 
         .logo-badge {
-            background-color: #d4af37;
-            color: #060913;
+            background-color: #1e3a8a;
+            color: #ffffff;
             padding: 4px 10px;
             font-weight: 900;
             border-radius: 4px;
@@ -54,7 +58,7 @@
             font-size: 18px;
             font-weight: 900;
             letter-spacing: 1px;
-            color: #ffffff; 
+            color: #1e3a8a; /* Beyaz temada okunması için koyu mavi yapıldı */
         }
 
         .nav-links {
@@ -65,7 +69,7 @@
         .nav-links button {
             background: none;
             border: none;
-            color: #94a3b8;
+            color: var(--text-muted);
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
@@ -77,7 +81,7 @@
 
         .nav-links button:hover, .nav-links button.active {
             color: var(--primary-color);
-            background-color: #1e293b;
+            background-color: #f1f5f9;
             border-bottom: 3px solid var(--primary-color); 
         }
 
@@ -103,11 +107,7 @@
             border-radius: 20px;
             text-align: center;
             margin-bottom: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            transition: background 0.3s ease;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.15);
         }
 
         .hero-banner h1 {
@@ -117,7 +117,6 @@
             font-weight: 900;
             letter-spacing: 3px;
             color: #ffffff;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
         }
 
         .hero-banner p {
@@ -125,7 +124,6 @@
             color: #f8fafc;
             font-weight: 600;
             margin: 0;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
         }
 
         .trophy-icon {
@@ -149,18 +147,18 @@
         }
 
         .stat-box {
-            background-color: #0b1120;
+            background-color: var(--card-bg);
             padding: 22px;
             border-radius: 14px;
             text-align: center;
-            border: 1px solid #1e293b;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         .stat-box h3 {
             margin: 0;
             font-size: 13px;
-            color: #94a3b8;
+            color: var(--text-muted);
             text-transform: uppercase;
         }
 
@@ -169,7 +167,6 @@
             font-size: 32px;
             font-weight: 900;
             color: var(--primary-color);
-            transition: color 0.3s ease;
         }
 
         /* TABLOLAR VE BAŞLIKLAR */
@@ -180,16 +177,16 @@
             padding-left: 15px;
             margin-bottom: 25px;
             letter-spacing: 1px;
-            transition: border-color 0.3s ease;
+            color: var(--text-main);
         }
 
         .table-wrapper {
-            background-color: #0b1120;
+            background-color: var(--card-bg);
             border-radius: 14px;
             overflow: hidden;
-            border: 1px solid #1e293b;
+            border: 1px solid var(--border-color);
             margin-bottom: 30px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
         table {
@@ -200,20 +197,20 @@
         th, td {
             padding: 16px 20px;
             text-align: left;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid var(--border-color);
             vertical-align: middle;
         }
 
         th {
-            background-color: #111827;
-            color: #94a3b8;
+            background-color: #f1f5f9;
+            color: var(--text-muted);
             font-size: 13px;
             text-transform: uppercase;
             font-weight: 700;
         }
 
         tr:hover {
-            background-color: #151f32;
+            background-color: #f8fafc;
         }
 
         .team-row {
@@ -221,6 +218,7 @@
             align-items: center;
             gap: 12px;
             font-weight: 700;
+            color: var(--text-main);
         }
 
         .flag-box {
@@ -229,7 +227,7 @@
 
         .no-data {
             padding: 40px;
-            color: #64748b;
+            color: var(--text-muted);
             text-align: center;
             font-weight: 600;
             font-size: 15px;
@@ -245,24 +243,22 @@
             justify-content: center;
             width: 28px;
             height: 28px;
-            border: 3px solid #ffffff; 
+            border: 3px solid #1e3a8a; 
             border-radius: 50%; 
-            background-color: rgba(11, 17, 32, 0.8); /* Arka planı hafif şeffaf karanlık yaptık ki her temada okunsun */
+            background-color: #ffffff;
             font-family: 'Arial', sans-serif;
             font-size: 16px;
             font-weight: 900; 
-            color: #ffffff; 
+            color: #1e3a8a; 
             line-height: 1;
             text-align: center;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px); /* Arka planı hafifçe flulaştırır */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
 <body>
 
-    <!-- ÜST MENÜ -->
     <nav class="navbar">
         <div class="logo-area">
             <div class="logo-badge">FIFA</div>
@@ -281,7 +277,6 @@
 
     <div class="container">
 
-        <!-- 🏠 1. SEKME: ANA SAYFA -->
         <div id="ana-sayfa" class="tab-content active">
             <div class="hero-banner">
                 <div class="trophy-icon">🏆</div>
@@ -297,7 +292,6 @@
             </div>
         </div>
 
-        <!-- 📊 2. SEKME: PUAN DURUMU -->
         <div id="puan-durumu" class="tab-content">
             <h2>Grup Puan Durumu</h2>
             <div class="table-wrapper">
@@ -329,7 +323,6 @@
             </div>
         </div>
 
-        <!-- 🗓️ 3. SEKME: FİKSTÜR -->
         <div id="fikstur" class="tab-content">
             <h2>Grup Maçları Fikstürü</h2>
             <div class="table-wrapper">
@@ -337,7 +330,6 @@
             </div>
         </div>
 
-        <!-- 🛡️ 4. SEKME: TAKIMLAR -->
         <div id="takimlar" class="tab-content">
             <h2>Turnuva Takımları</h2>
             <div class="table-wrapper">
@@ -347,22 +339,21 @@
                         <th>Takım Adı</th>
                         <th>Resmi Kadro Durumu</th>
                     </tr>
-                    <tr><td>🇫🇷</td><td><b>FRANCE @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇳🇱</td><td><b>NETHERLANDS @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇧🇷</td><td><b>BRAZIL @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇲🇦</td><td><b>MOROCCO @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇹🇷</td><td><b>TURKIYE @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇪🇸</td><td><b>SPAIN @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇩🇪</td><td><b>GERMANY @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇵🇹</td><td><b>PORTUGAL @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇲🇽</td><td><b>MEXICO @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇦🇷</td><td><b>ARGENTINA @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇧🇪</td><td><b>BELGIUM @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇫🇷</td><td><b style="color:var(--text-main)">FRANCE @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇳🇱</td><td><b style="color:var(--text-main)">NETHERLANDS @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇧🇷</td><td><b style="color:var(--text-main)">BRAZIL @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇲🇦</td><td><b style="color:var(--text-main)">MOROCCO @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇹🇷</td><td><b style="color:var(--text-main)">TURKIYE @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇪🇸</td><td><b style="color:var(--text-main)">SPAIN @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇩🇪</td><td><b style="color:var(--text-main)">GERMANY @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇵🇹</td><td><b style="color:var(--text-main)">PORTUGAL @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇲🇽</td><td><b style="color:var(--text-main)">MEXICO @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇦🇷</td><td><b style="color:var(--text-main)">ARGENTINA @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇧🇪</td><td><b style="color:var(--text-main)">BELGIUM @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
                 </table>
             </div>
         </div>
 
-        <!-- 🏃‍♂️ 5. SEKME: OYUNCULAR -->
         <div id="oyuncular" class="tab-content">
             <h2>Milli Sporcular</h2>
             <div class="table-wrapper">
@@ -370,7 +361,6 @@
             </div>
         </div>
 
-        <!-- 📈 6. SEKME: İSTATİSTİKLER -->
         <div id="istatistikler" class="tab-content">
             <h2>Altın Ayakkabı Yarışı (Gol & Asist)</h2>
             <div class="table-wrapper">
@@ -378,7 +368,6 @@
             </div>
         </div>
 
-        <!-- 🔄 7. SEKME: TRANSFERLER -->
         <div id="transferler" class="tab-content">
             <h2>Milli Takım Kamp Seçimleri</h2>
             <div class="table-wrapper">
@@ -388,39 +377,9 @@
 
     </div>
 
-    <!-- 📌 Sağ En Alttaki Lisans Logosu Elemanı -->
     <div class="bottom-right-logo">R</div>
 
     <script>
-        // RASTGELE DÜNYA KUPASI 2026 TEMALARI HAVUZU
-        const wcThemes = [
-            {
-                primary: '#d4af37', 
-                border: '#d4af37',
-                gradient: 'linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%)'
-            },
-            {
-                primary: '#dc2626', 
-                border: '#dc2626',
-                gradient: 'linear-gradient(135px, #450a0a 0%, #991b1b 50%, #dc2626 100%)'
-            },
-            {
-                primary: '#10b981', 
-                border: '#10b981',
-                gradient: 'linear-gradient(135px, #064e3b 0%, #047857 50%, #d4af37 100%)'
-            },
-            {
-                primary: '#2563eb', 
-                border: '#2563eb',
-                gradient: 'linear-gradient(135px, #1e1b4b 0%, #4c1d95 50%, #2563eb 100%)'
-            },
-            {
-                primary: '#f97316', 
-                border: '#f97316',
-                gradient: 'linear-gradient(135px, #2a0845 0%, #6414fd 60%, #f97316 100%)'
-            }
-        ];
-
         function openTab(evt, tabId) {
             let contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
@@ -430,14 +389,6 @@
 
             document.getElementById(tabId).classList.add('active');
             evt.currentTarget.classList.add('active');
-
-            // HER SEKMEYE TIKLANDIĞINDA RASTGELE TEMA SEÇ
-            const randomTheme = wcThemes[Math.floor(Math.random() * wcThemes.length)];
-            
-            let root = document.documentElement;
-            root.style.setProperty('--primary-color', randomTheme.primary);
-            root.style.setProperty('--navbar-border', randomTheme.border);
-            root.style.setProperty('--banner-gradient', randomTheme.gradient);
         }
     </script>
 
