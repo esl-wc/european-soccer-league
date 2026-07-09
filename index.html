@@ -112,7 +112,7 @@
 
         .hero-banner h1 {
             font-size: 46px;
-            margin: 0 0 12px 0;
+            margin: 15px 0 12px 0;
             text-transform: uppercase;
             font-weight: 900;
             letter-spacing: 3px;
@@ -126,12 +126,12 @@
             margin: 0;
         }
 
-        /* GÜNCELLENEN KUPA GÖRSELİ */
-        .cup-image {
-            width: 120px;
+        /* YENİ FIFA 26 KUPA GÖRSELİ */
+        .cup-image-new {
+            width: 150px;
             height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             animation: float 3s ease-in-out infinite;
         }
 
@@ -281,7 +281,7 @@
 
         <div id="ana-sayfa" class="tab-content active">
             <div class="hero-banner">
-                <img src="https://assets.goal.com/images/v3/blt992b8686f05b0d5c/FIFA_World_Cup_2026_trophy.jpg" alt="World Cup 2026 Trophy" class="cup-image">
+                <img src="https://assets.goal.com/images/v3/blt992b8686f05b0d5c/FIFA_World_Cup_2026_trophy.jpg" alt="World Cup 2026" class="cup-image-new">
                 <h1>EUROPEAN SOCCER LEAGUE</h1>
                 <p>Milli Takımlar Sahneye Çıkıyor! Dünya Kupası Heyecanını Canlı Takip Et.</p>
             </div>
@@ -298,82 +298,9 @@
             <h2>Grup Puan Durumu</h2>
             <div class="table-wrapper">
                 <table>
-                    <tr>
-                        <th>#</th>
-                        <th>Takım</th>
-                        <th>O</th>
-                        <th>G</th>
-                        <th>B</th>
-                        <th>M</th>
-                        <th>AG</th>
-                        <th>YG</th>
-                        <th>AV</th>
-                        <th>P</th>
-                    </tr>
-                    <tr><td>1</td><td><div class="team-row"><span class="flag-box">🇫🇷</span>FRANCE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>2</td><td><div class="team-row"><span class="flag-box">🇳🇱</span>NETHERLANDS @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>3</td><td><div class="team-row"><span class="flag-box">🇧🇷</span>BRAZIL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>4</td><td><div class="team-row"><span class="flag-box">🇲🇦</span>MOROCCO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>5</td><td><div class="team-row"><span class="flag-box">🇹🇷</span>TURKIYE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>6</td><td><div class="team-row"><span class="flag-box">🇪🇸</span>SPAIN @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>7</td><td><div class="team-row"><span class="flag-box">🇩🇪</span>GERMANY @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>8</td><td><div class="team-row"><span class="flag-box">🇵🇹</span>PORTUGAL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>9</td><td><div class="team-row"><span class="flag-box">🇲🇽</span>MEXICO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>10</td><td><div class="team-row"><span class="flag-box">🇦🇷</span>ARGENTINA @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>11</td><td><div class="team-row"><span class="flag-box">🇧🇪</span>BELGIUM @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><th>#</th><th>Takım</th><th>O</th><th>G</th><th>B</th><th>M</th><th>P</th></tr>
+                    <tr><td>1</td><td><div class="team-row"><span class="flag-box">🇫🇷</span>FRANCE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                 </table>
-            </div>
-        </div>
-
-        <div id="fikstur" class="tab-content">
-            <h2>Grup Maçları Fikstürü</h2>
-            <div class="table-wrapper">
-                <div class="no-data">Dünya Kupası kura çekimi ve maç takvimi yakında eklenecektir.</div>
-            </div>
-        </div>
-
-        <div id="takimlar" class="tab-content">
-            <h2>Turnuva Takımları</h2>
-            <div class="table-wrapper">
-                <table>
-                    <tr>
-                        <th>Bayrak</th>
-                        <th>Takım Adı</th>
-                        <th>Resmi Kadro Durumu</th>
-                    </tr>
-                    <tr><td>🇫🇷</td><td><b style="color:var(--text-main)">FRANCE @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇳🇱</td><td><b style="color:var(--text-main)">NETHERLANDS @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇧🇷</td><td><b style="color:var(--text-main)">BRAZIL @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇲🇦</td><td><b style="color:var(--text-main)">MOROCCO @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇹🇷</td><td><b style="color:var(--text-main)">TURKIYE @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇪🇸</td><td><b style="color:var(--text-main)">SPAIN @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇩🇪</td><td><b style="color:var(--text-main)">GERMANY @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇵🇹</td><td><b style="color:var(--text-main)">PORTUGAL @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇲🇽</td><td><b style="color:var(--text-main)">MEXICO @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇦🇷</td><td><b style="color:var(--text-main)">ARGENTINA @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇧🇪</td><td><b style="color:var(--text-main)">BELGIUM @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                </table>
-            </div>
-        </div>
-
-        <div id="oyuncular" class="tab-content">
-            <h2>Milli Sporcular</h2>
-            <div class="table-wrapper">
-                <div class="no-data">Tüm eski oyuncular temizlendi. Dünya Kupası için yeni lisans kayıtları bekleniyor.</div>
-            </div>
-        </div>
-
-        <div id="istatistikler" class="tab-content">
-            <h2>Altın Ayakkabı Yarışı (Gol & Asist)</h2>
-            <div class="table-wrapper">
-                <div class="no-data">Turnuva henüz başlamadığı için istatistik tablosu boş.</div>
-            </div>
-        </div>
-
-        <div id="transferler" class="tab-content">
-            <h2>Milli Takım Kamp Seçimleri</h2>
-            <div class="table-wrapper">
-                <div class="no-data">Oyuncular milli takım kamplarını seçtiğinde listelenecektir.</div>
             </div>
         </div>
 
@@ -385,10 +312,8 @@
         function openTab(evt, tabId) {
             let contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
-
             let buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-
             document.getElementById(tabId).classList.add('active');
             evt.currentTarget.classList.add('active');
         }
