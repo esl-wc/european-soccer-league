@@ -4,66 +4,74 @@
     <meta charset="UTF-8">
     <title>EUROPEAN SOCCER LEAGUE</title>
     <style>
-        body { margin: 0; font-family: sans-serif; background-color: #0f172a; color: white; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #121212; color: white; }
+        .navbar { background: #1e1e1e; padding: 15px 30px; display: flex; justify-content: space-between; border-bottom: 2px solid #333; }
+        .logo { font-weight: bold; font-size: 1.2em; color: #3b82f6; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-btn { color: #ccc; cursor: pointer; text-transform: uppercase; font-weight: bold; border: none; background: none; }
+        .nav-btn:hover, .nav-btn.active { color: #fff; border-bottom: 2px solid #3b82f6; }
         
-        /* SOL ÜST LİG İSMİ */
-        .header { padding: 20px; font-size: 24px; font-weight: bold; color: #38bdf8; }
-
-        /* ANA MENÜ */
-        .navbar { display: flex; gap: 15px; padding: 10px 20px; background: #1e293b; }
-        .nav-btn { color: #94a3b8; cursor: pointer; text-transform: uppercase; font-weight: bold; border: none; background: none; }
-        .nav-btn.active { color: #fff; }
-
-        /* ANA YAPI */
-        .container { display: flex; padding: 20px; gap: 40px; }
-        .content { flex: 2; }
+        .tab-content { display: none; padding: 40px; }
+        .tab-content.active { display: block; }
         
-        /* SAĞ ÜST TAKIMLAR */
-        .sidebar { flex: 1; background: #1e293b; padding: 20px; border-radius: 8px; }
-        .sidebar h3 { margin-top: 0; color: #38bdf8; }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        td { padding: 8px 0; border-bottom: 1px solid #334155; }
-        .team-logo { width: 25px; height: 15px; margin-right: 10px; vertical-align: middle; }
+        table { width: 100%; border-collapse: collapse; background: #1e1e1e; border-radius: 8px; overflow: hidden; }
+        th { background: #252525; padding: 15px; text-align: left; color: #aaa; }
+        td { padding: 15px; border-bottom: 1px solid #333; }
+        .team-cell { display: flex; align-items: center; gap: 10px; }
+        .flag { width: 25px; height: 18px; border-radius: 2px; }
     </style>
 </head>
 <body>
 
-<div class="header">EUROPEAN SOCCER LEAGUE</div>
-
 <div class="navbar">
-    <button class="nav-btn active">Giriş</button>
-    <button class="nav-btn">Gruplar</button>
-    <button class="nav-btn">Fikstür</button>
-    <button class="nav-btn">Takımlar</button>
-    <button class="nav-btn">Oyuncular</button>
-    <button class="nav-btn">İstatistikler</button>
-    <button class="nav-btn">Transferler</button>
-</div>
-
-<div class="container">
-    <div class="content">
-        <h1>HOŞ GELDİNİZ</h1>
-        <p>Ligin ana sayfası ve güncellemeler burada yer alacak.</p>
-    </div>
-
-    <div class="sidebar">
-        <h3>TAKIMLAR</h3>
-        <table>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/fr.png"> FRANCE @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/nl.png"> NETHERLANDS @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/br.png"> BRAZIL @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/ma.png"> MOROCCO @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/tr.png"> TURKIYE @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/es.png"> SPAIN @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/de.png"> GERMANY @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/pt.png"> PORTUGAL @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/mx.png"> MEXICO @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/ar.png"> ARGENTINA @</td></tr>
-            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/be.png"> BELGIUM @</td></tr>
-        </table>
+    <div class="logo">ESL | EUROPEAN SOCCER LEAGUE</div>
+    <div class="nav-links">
+        <button class="nav-btn active" onclick="showTab('giris')">GİRİŞ</button>
+        <button class="nav-btn" onclick="showTab('gruplar')">GRUPLAR</button>
+        <button class="nav-btn" onclick="showTab('fikstur')">FİKSTÜR</button>
+        <button class="nav-btn" onclick="showTab('takimlar')">TAKIMLAR</button>
+        <button class="nav-btn" onclick="showTab('istatistikler')">İSTATİSTİKLER</button>
+        <button class="nav-btn" onclick="showTab('transferler')">TRANSFERLER</button>
     </div>
 </div>
 
+<div id="giris" class="tab-content active">
+    <h1>HOŞ GELDİNİZ</h1>
+    <p>Turnuva bilgilerini ve güncel skorları yukarıdaki menüden takip edebilirsiniz.</p>
+</div>
+
+<div id="gruplar" class="tab-content">
+    <h2>Grup Puan Durumu</h2>
+    <table>
+        <tr><th>#</th><th>TAKIM</th><th>O</th><th>G</th><th>B</th><th>M</th><th>AG</th><th>YG</th><th>AV</th><th>P</th></tr>
+        <tbody id="puan-tablosu"></tbody>
+    </table>
+</div>
+
+<div id="fikstur" class="tab-content"><h2>Fikstür</h2><p>Maç takvimi yakında eklenecektir.</p></div>
+<div id="takimlar" class="tab-content"><h2>Takımlar</h2><p>Katılımcı ülkeler listesi.</p></div>
+<div id="istatistikler" class="tab-content"><h2>İstatistikler</h2><p>Gol krallığı ve asist krallığı.</p></div>
+<div id="transferler" class="tab-content"><h2>Transferler</h2><p>Güncel transfer haberleri.</p></div>
+
+<script>
+    const takimlar = ["FRANCE", "NETHERLANDS", "BRAZIL", "MOROCCO", "TURKIYE", "SPAIN", "GERMANY", "PORTUGAL", "MEXICO", "ARGENTINA", "BELGIUM"];
+    const ulkeKodlari = ["fr", "nl", "br", "ma", "tr", "es", "de", "pt", "mx", "ar", "be"];
+
+    function showTab(id) {
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    const tbody = document.getElementById('puan-tablosu');
+    takimlar.forEach((t, index) => {
+        tbody.innerHTML += `<tr>
+            <td>${index + 1}</td>
+            <td class="team-cell"><img class="flag" src="https://flagcdn.com/w40/${ulkeKodlari[index]}.png"> ${t}</td>
+            <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>`;
+    });
+</script>
 </body>
 </html>
