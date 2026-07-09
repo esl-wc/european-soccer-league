@@ -2,59 +2,68 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUROPEAN SOCCER LEAGUE</title>
     <style>
         body { margin: 0; font-family: sans-serif; background-color: #0f172a; color: white; }
-        .navbar { display: flex; gap: 20px; padding: 20px; background: #1e293b; border-bottom: 2px solid #334155; }
+        
+        /* SOL ÜST LİG İSMİ */
+        .header { padding: 20px; font-size: 24px; font-weight: bold; color: #38bdf8; }
+
+        /* ANA MENÜ */
+        .navbar { display: flex; gap: 15px; padding: 10px 20px; background: #1e293b; }
         .nav-btn { color: #94a3b8; cursor: pointer; text-transform: uppercase; font-weight: bold; border: none; background: none; }
-        .nav-btn.active { color: #fff; border-bottom: 2px solid #fff; }
-        .tab-content { display: none; padding: 20px; }
-        .tab-content.active { display: block; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #1e293b; }
-        th, td { padding: 15px; border-bottom: 1px solid #334155; text-align: left; }
-        .team-row { display: flex; align-items: center; gap: 10px; }
-        .team-logo { width: 30px; height: 20px; }
+        .nav-btn.active { color: #fff; }
+
+        /* ANA YAPI */
+        .container { display: flex; padding: 20px; gap: 40px; }
+        .content { flex: 2; }
+        
+        /* SAĞ ÜST TAKIMLAR */
+        .sidebar { flex: 1; background: #1e293b; padding: 20px; border-radius: 8px; }
+        .sidebar h3 { margin-top: 0; color: #38bdf8; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        td { padding: 8px 0; border-bottom: 1px solid #334155; }
+        .team-logo { width: 25px; height: 15px; margin-right: 10px; vertical-align: middle; }
     </style>
 </head>
 <body>
 
+<div class="header">EUROPEAN SOCCER LEAGUE</div>
+
 <div class="navbar">
-    <button class="nav-btn active" onclick="openTab(event, 'giris')">Giriş</button>
-    <button class="nav-btn" onclick="openTab(event, 'gruplar')">Gruplar</button>
-    <button class="nav-btn" onclick="openTab(event, 'fikstur')">Fikstür</button>
-    <button class="nav-btn" onclick="openTab(event, 'takimlar')">Takımlar</button>
-    <button class="nav-btn" onclick="openTab(event, 'oyuncular')">Oyuncular</button>
-    <button class="nav-btn" onclick="openTab(event, 'istatistikler')">İstatistikler</button>
-    <button class="nav-btn" onclick="openTab(event, 'transferler')">Transferler</button>
+    <button class="nav-btn active">Giriş</button>
+    <button class="nav-btn">Gruplar</button>
+    <button class="nav-btn">Fikstür</button>
+    <button class="nav-btn">Takımlar</button>
+    <button class="nav-btn">Oyuncular</button>
+    <button class="nav-btn">İstatistikler</button>
+    <button class="nav-btn">Transferler</button>
 </div>
 
-<div id="giris" class="tab-content active"><h1>HOŞ GELDİNİZ</h1></div>
+<div class="container">
+    <div class="content">
+        <h1>HOŞ GELDİNİZ</h1>
+        <p>Ligin ana sayfası ve güncellemeler burada yer alacak.</p>
+    </div>
 
-<div id="gruplar" class="tab-content">
-    <h3>ESL WORLD CUP S1 TEAM</h3>
-    <table>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/fr.png"> FRANCE @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/nl.png"> NETHERLANDS @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/br.png"> BRAZIL @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/ma.png"> MOROCCO @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/tr.png"> TURKIYE @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/es.png"> SPAIN @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/de.png"> GERMANY @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/pt.png"> PORTUGAL @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/mx.png"> MEXICO @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/ar.png"> ARGENTINA @</div></td></tr>
-        <tr><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/be.png"> BELGIUM @</div></td></tr>
-    </table>
+    <div class="sidebar">
+        <h3>TAKIMLAR</h3>
+        <table>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/fr.png"> FRANCE @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/nl.png"> NETHERLANDS @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/br.png"> BRAZIL @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/ma.png"> MOROCCO @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/tr.png"> TURKIYE @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/es.png"> SPAIN @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/de.png"> GERMANY @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/pt.png"> PORTUGAL @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/mx.png"> MEXICO @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/ar.png"> ARGENTINA @</td></tr>
+            <tr><td><img class="team-logo" src="https://flagcdn.com/w40/be.png"> BELGIUM @</td></tr>
+        </table>
+    </div>
 </div>
 
-<script>
-    function openTab(evt, tabId) {
-        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        evt.currentTarget.classList.add('active');
-    }
-</script>
 </body>
 </html>
