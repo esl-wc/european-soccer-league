@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>European Soccer League - WC26</title>
     <style>
-        /* WC26 MODERN KOYU TEMA AYARLARI */
+        /* WC26 DENGELİ RENK TEMASI */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b0c10; 
+            background-color: #0d0e12; 
             color: #ffffff;
         }
 
@@ -18,9 +18,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #11141a; 
-            padding: 15px 40px;
-            border-bottom: 3px solid #1f2633;
+            background-color: #13161f; 
+            padding: 12px 40px;
+            border-bottom: 4px solid #a855f7; 
             position: sticky;
             top: 0;
             z-index: 100;
@@ -29,20 +29,18 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        .logo-badge {
-            background-color: #e63946; 
-            color: white;
-            padding: 5px 10px;
-            font-weight: bold;
-            border-radius: 4px;
-            font-size: 14px;
+        .logo-image {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             letter-spacing: 1px;
             color: #ffffff;
@@ -50,26 +48,26 @@
 
         .nav-links {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .nav-links button {
             background: none;
             border: none;
             color: #94a3b8;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 700;
             text-transform: uppercase;
             cursor: pointer;
             padding: 10px 16px;
             border-radius: 6px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .nav-links button:hover, .nav-links button.active {
             color: #ffffff;
-            background-color: #1e293b;
-            border-bottom: 2px solid #06b6d4; 
+            background-color: #1e2433;
+            border-bottom: 3px solid #22c55e; 
         }
 
         /* ANA KONTEYNER */
@@ -87,32 +85,35 @@
             display: block;
         }
 
-        /* ANA SAYFA BÜYÜK AFİŞ */
+        /* DÜNYA KUPASI AFİŞİ */
         .hero-banner {
-            background: linear-gradient(135px, #11141a 0%, #06b6d4 100%);
-            padding: 60px 40px;
-            border-radius: 12px;
+            background: linear-gradient(135px, #6b21a8 0%, #dc2626 45%, #ca8a04 80%, #16a34a 100%);
+            padding: 50px 40px;
+            border-radius: 16px;
             text-align: center;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #1f2633;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-banner h1 {
-            font-size: 42px;
-            margin: 0 0 10px 0;
+            font-size: 46px;
+            margin: 0 0 12px 0;
             text-transform: uppercase;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
         .hero-banner p {
             font-size: 18px;
-            color: #e2e8f0;
+            color: #ffffff;
+            font-weight: 600;
             margin: 0;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
-        /* HIZLI ÖZET KUTULARI */
+        /* ÖZET KUTULARI */
         .quick-stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -121,41 +122,42 @@
         }
 
         .stat-box {
-            background-color: #11141a;
+            background-color: #13161f;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             text-align: center;
-            border: 1px solid #1f2633;
+            border: 1px solid #232936;
         }
 
         .stat-box h3 {
             margin: 0;
-            font-size: 14px;
+            font-size: 13px;
             color: #94a3b8;
             text-transform: uppercase;
         }
 
         .stat-box p {
-            margin: 10px 0 0 0;
-            font-size: 28px;
+            margin: 8px 0 0 0;
+            font-size: 30px;
             font-weight: bold;
-            color: #06b6d4;
+            color: #eab308; 
         }
 
-        /* TABLOLAR */
+        /* TABLOLAR VE BAŞLIKLAR */
         h2 {
-            font-size: 24px;
+            font-size: 22px;
             text-transform: uppercase;
-            border-left: 5px solid #e63946;
+            border-left: 5px solid #dc2626; 
             padding-left: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
         }
 
         .table-wrapper {
-            background-color: #11141a;
-            border-radius: 8px;
+            background-color: #13161f;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #1f2633;
+            border: 1px solid #232936;
             margin-bottom: 30px;
         }
 
@@ -165,13 +167,14 @@
         }
 
         th, td {
-            padding: 14px 20px;
+            padding: 15px 20px;
             text-align: left;
-            border-bottom: 1px solid #1f2633;
+            border-bottom: 1px solid #1e2433;
+            vertical-align: middle;
         }
 
         th {
-            background-color: #171c26;
+            background-color: #1a1f2c;
             color: #94a3b8;
             font-size: 13px;
             text-transform: uppercase;
@@ -179,57 +182,73 @@
         }
 
         tr:hover {
-            background-color: #1c2331;
+            background-color: #1a202c;
         }
 
+        /* ROBLOX AVATAR STİLİ */
+        .player-flex {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .roblox-avatar {
+            width: 35px;
+            height: 35px;
+            background-color: #1a1f2c;
+            border: 2px solid #a855f7;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* POZİSYON ETİKETLERİ */
         .badge {
             padding: 6px 10px;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
         }
-        .gk { background-color: #d97706; color: #fff; }   
+        .gk { background-color: #ca8a04; color: #fff; }   
         .def { background-color: #16a34a; color: #fff; }  
         .mid { background-color: #2563eb; color: #fff; }  
         .att { background-color: #dc2626; color: #fff; }  
         .signed { background-color: #7c3aed; color: #fff; } 
 
-        .zone-ucl { border-left: 4px solid #2563eb; }
+        .zone-ucl { border-left: 4px solid #16a34a; }
 
-        /* BUTON STİLİ */
+        /* İNCELE BUTONU */
         .info-btn {
-            background-color: #e63946;
+            background-color: #6b21a8; 
             color: #fff;
             border: none;
-            padding: 6px 14px;
-            border-radius: 4px;
+            padding: 8px 16px;
+            border-radius: 6px;
             font-weight: bold;
+            font-size: 13px;
             cursor: pointer;
             transition: all 0.2s;
         }
         .info-btn:hover {
-            background-color: #b91c1c;
-            transform: scale(1.05);
+            background-color: #581c87;
+            transform: translateY(-1px);
         }
 
-        /* 👑 GELİŞMİŞ İNCELEME (INFO) KUTUSU */
+        /* GELİŞMİŞ İNCELEME KUTUSU */
         .info-card {
             display: none;
-            background: linear-gradient(180px, #171c26 0%, #11141a 100%);
-            border: 1px solid #e63946;
-            border-radius: 12px;
+            background: #13161f;
+            border: 2px solid #6b21a8;
+            border-radius: 14px;
             padding: 25px;
             margin-top: 25px;
-            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.15);
             position: relative;
         }
         .info-card h3 {
             margin-top: 0;
-            color: #e63946;
+            color: #ffffff;
             font-size: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -238,19 +257,18 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: #1f2633;
+            background: #232936;
             border: none;
             color: #94a3b8;
             font-weight: bold;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             padding: 6px 12px;
             border-radius: 6px;
-            transition: all 0.2s;
         }
         .info-close:hover {
             color: #fff;
-            background: #e63946;
+            background: #dc2626;
         }
         .info-grid {
             display: grid;
@@ -259,13 +277,13 @@
             margin-top: 20px;
         }
         .info-section {
-            background: #1f2633;
+            background: #1a1f2c;
             padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #06b6d4;
+            border-radius: 10px;
+            border-left: 4px solid #16a34a;
         }
         .info-section.kadro {
-            border-left-color: #e63946;
+            border-left-color: #6b21a8;
             grid-column: span 2;
         }
         .info-section h4 {
@@ -286,14 +304,26 @@
             margin-top: 5px;
         }
         .mini-player-badge {
-            background: #11141a;
+            background: #13161f;
             padding: 6px 12px;
             border-radius: 6px;
             font-size: 13px;
             display: flex;
             align-items: center;
             gap: 8px;
-            border: 1px solid #2d3748;
+            border: 1px solid #232936;
+        }
+        .mini-avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1a1f2c;
+        }
+        .no-data {
+            padding: 30px;
+            color: #94a3b8;
+            text-align: center;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -302,7 +332,7 @@
     <!-- ÜST MENÜ -->
     <nav class="navbar">
         <div class="logo-area">
-            <div class="logo-badge">ESL</div>
+            <img src="https://i.ibb.co/qY7v9yM/esl-logo.png" alt="ESL Logo" class="logo-image">
             <div class="logo">EUROPEAN SOCCER LEAGUE</div>
         </div>
         <div class="nav-links">
@@ -389,14 +419,14 @@
                     <tr>
                         <td>🇹🇷</td>
                         <td><b>Türkiye</b></td>
-                        <td>malemir</td>
+                        <td>malemir827772</td>
                         <td>Atatürk Olympic Stadium</td>
                         <td><button class="info-btn" onclick="toggleInfo('turkiye-info')">İncele</button></td>
                     </tr>
                 </table>
             </div>
 
-            <!-- 👑 DÜZENLİ TÜRKİYE INFO KUTUSU -->
+            <!-- TÜRKİYE INFO KUTUSU -->
             <div id="turkiye-info" class="info-card">
                 <button class="info-close" onclick="toggleInfo('turkiye-info')">Kapat</button>
                 <h3>🇹🇷 Türkiye Takım Profili</h3>
@@ -404,7 +434,7 @@
                 <div class="info-grid">
                     <div class="info-section">
                         <h4>Takım Kaptanı</h4>
-                        <p>malemir</p>
+                        <p>malemir827772</p>
                     </div>
                     <div class="info-section">
                         <h4>Stadyum</h4>
@@ -413,7 +443,7 @@
                     <div class="info-section kadro">
                         <h4>Güncel Kadro Yapısı</h4>
                         <div class="info-kadro-list">
-                            <div class="mini-player-badge"><b>malemir</b> <span class="badge att">ATT</span></div>
+                            <div class="mini-player-badge"><img src="https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=2026202769&size=48x48&format=Png" class="mini-avatar"><b>malemir827772</b> <span class="badge att">ATT</span></div>
                             <div class="mini-player-badge"><b>xlavi</b> <span class="badge att">ATT</span></div>
                             <div class="mini-player-badge"><b>Megu</b> <span class="badge mid">MID</span></div>
                             <div class="mini-player-badge"><b>Yalo</b> <span class="badge def">DEF</span></div>
@@ -438,7 +468,12 @@
                         <th>Reyting</th>
                     </tr>
                     <tr>
-                        <td>malemir</td>
+                        <td>
+                            <div class="player-flex">
+                                <img src="https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=2026202769&size=100x100&format=Png" alt="malemir827772" class="roblox-avatar">
+                                <b>malemir827772</b>
+                            </div>
+                        </td>
                         <td>Türkiye</td>
                         <td><span class="badge att">ATT</span></td>
                         <td>80</td> 
@@ -497,7 +532,7 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>malemir</td>
+                        <td>malemir827772</td>
                         <td>Türkiye</td>
                         <td>0</td>
                         <td>0</td>
@@ -525,7 +560,7 @@
                         <th>Durum</th>
                     </tr>
                     <tr>
-                        <td>malemir</td>
+                        <td>malemir827772</td>
                         <td>Free Agent</td>
                         <td>Türkiye</td>
                         <td><span class="badge signed">Signed</span></td>
@@ -572,7 +607,6 @@
 
     </div>
 
-    <!-- JAVASCRIPT BEYNİ -->
     <script>
         function openTab(evt, tabId) {
             let contents = document.querySelectorAll('.tab-content');
