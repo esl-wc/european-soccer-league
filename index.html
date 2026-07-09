@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>European Soccer League - WC26</title>
     <style>
-        /* WC26 DENGELİ RENK TEMASI */
+        /* ESL KIRMIZI TEMA AYARLARI */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,7 +20,7 @@
             align-items: center;
             background-color: #13161f; 
             padding: 12px 40px;
-            border-bottom: 4px solid #a855f7; 
+            border-bottom: 4px solid #dc2626; /* ESL KIRMIZI ÇİZGİ */
             position: sticky;
             top: 0;
             z-index: 100;
@@ -32,18 +32,11 @@
             gap: 15px;
         }
 
-        .logo-image {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        .logo {
-            font-size: 20px;
+        .logo-text {
+            font-size: 22px;
             font-weight: 900;
-            letter-spacing: 1px;
-            color: #ffffff;
+            letter-spacing: 1.5px;
+            color: #dc2626; /* ESL KIRMIZI */
         }
 
         .nav-links {
@@ -67,7 +60,7 @@
         .nav-links button:hover, .nav-links button.active {
             color: #ffffff;
             background-color: #1e2433;
-            border-bottom: 3px solid #22c55e; 
+            border-bottom: 3px solid #dc2626; 
         }
 
         /* ANA KONTEYNER */
@@ -87,7 +80,7 @@
 
         /* DÜNYA KUPASI AFİŞİ */
         .hero-banner {
-            background: linear-gradient(135px, #6b21a8 0%, #dc2626 45%, #ca8a04 80%, #16a34a 100%);
+            background: linear-gradient(135px, #dc2626 0%, #991b1b 100%);
             padding: 50px 40px;
             border-radius: 16px;
             text-align: center;
@@ -140,7 +133,7 @@
             margin: 8px 0 0 0;
             font-size: 30px;
             font-weight: bold;
-            color: #eab308; 
+            color: #dc2626; 
         }
 
         /* TABLOLAR VE BAŞLIKLAR */
@@ -185,140 +178,6 @@
             background-color: #1a202c;
         }
 
-        /* ROBLOX AVATAR STİLİ */
-        .player-flex {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .roblox-avatar {
-            width: 35px;
-            height: 35px;
-            background-color: #1a1f2c;
-            border: 2px solid #a855f7;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* POZİSYON ETİKETLERİ */
-        .badge {
-            padding: 6px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .gk { background-color: #ca8a04; color: #fff; }   
-        .def { background-color: #16a34a; color: #fff; }  
-        .mid { background-color: #2563eb; color: #fff; }  
-        .att { background-color: #dc2626; color: #fff; }  
-        .signed { background-color: #7c3aed; color: #fff; } 
-
-        .zone-ucl { border-left: 4px solid #16a34a; }
-
-        /* İNCELE BUTONU */
-        .info-btn {
-            background-color: #6b21a8; 
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .info-btn:hover {
-            background-color: #581c87;
-            transform: translateY(-1px);
-        }
-
-        /* GELİŞMİŞ İNCELEME KUTUSU */
-        .info-card {
-            display: none;
-            background: #13161f;
-            border: 2px solid #6b21a8;
-            border-radius: 14px;
-            padding: 25px;
-            margin-top: 25px;
-            position: relative;
-        }
-        .info-card h3 {
-            margin-top: 0;
-            color: #ffffff;
-            font-size: 20px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .info-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #232936;
-            border: none;
-            color: #94a3b8;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 13px;
-            padding: 6px 12px;
-            border-radius: 6px;
-        }
-        .info-close:hover {
-            color: #fff;
-            background: #dc2626;
-        }
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .info-section {
-            background: #1a1f2c;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #16a34a;
-        }
-        .info-section.kadro {
-            border-left-color: #6b21a8;
-            grid-column: span 2;
-        }
-        .info-section h4 {
-            margin: 0 0 8px 0;
-            color: #94a3b8;
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-        .info-section p {
-            margin: 0;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .info-kadro-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 5px;
-        }
-        .mini-player-badge {
-            background: #13161f;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid #232936;
-        }
-        .mini-avatar {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #1a1f2c;
-        }
         .no-data {
             padding: 30px;
             color: #94a3b8;
@@ -332,8 +191,7 @@
     <!-- ÜST MENÜ -->
     <nav class="navbar">
         <div class="logo-area">
-            <img src="https://i.ibb.co/qY7v9yM/esl-logo.png" alt="ESL Logo" class="logo-image">
-            <div class="logo">EUROPEAN SOCCER LEAGUE</div>
+            <div class="logo-text">ESL | EUROPEAN SOCCER LEAGUE</div>
         </div>
         <div class="nav-links">
             <button class="nav-btn active" onclick="openTab(event, 'ana-sayfa')">Ana Sayfa</button>
@@ -352,12 +210,12 @@
         <div id="ana-sayfa" class="tab-content active">
             <div class="hero-banner">
                 <h1>EUROPEAN SOCCER LEAGUE</h1>
-                <p>Oyuncuları, takımları, transferleri ve tüm istatistikleri tek bir merkezden takip et.</p>
+                <p>Yeni Sezon Başladı! Tüm takımlar sıfırlandı, yeni oyuncu kayıtları bekleniyor.</p>
             </div>
 
             <div class="quick-stats">
-                <div class="stat-box"><h3>Takım</h3><p>1</p></div>
-                <div class="stat-box"><h3>Oyuncu</h3><p>7</p></div> 
+                <div class="stat-box"><h3>Toplam Takım</h3><p>11</p></div>
+                <div class="stat-box"><h3>Kayıtlı Oyuncu</h3><p>0</p></div> 
                 <div class="stat-box"><h3>Oynanan Maç</h3><p>0</p></div>
                 <div class="stat-box"><h3>Toplam Gol</h3><p>0</p></div>
             </div>
@@ -380,18 +238,17 @@
                         <th>AV</th>
                         <th>P</th>
                     </tr>
-                    <tr class="zone-ucl">
-                        <td>1</td>
-                        <td><b>Türkiye</b></td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
+                    <tr><td>1</td><td><b>FRANCE @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>2</td><td><b>NETHERLANDS @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>3</td><td><b>BRAZIL @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>4</td><td><b>MOROCCO @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>5</td><td><b>TURKIYE @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>6</td><td><b>SPAIN @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>7</td><td><b>GERMANY @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>8</td><td><b>PORTUGAL @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>9</td><td><b>MEXICO @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>10</td><td><b>ARGENTINA @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>11</td><td><b>BELGIUM @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                 </table>
             </div>
         </div>
@@ -400,123 +257,40 @@
         <div id="fikstur" class="tab-content">
             <h2>Fikstür</h2>
             <div class="table-wrapper">
-                <div class="no-data">Henüz fikstür oluşturulmamış.</div>
+                <div class="no-data">Yeni sezon fikstürü yakında eklenecektir.</div>
             </div>
         </div>
 
         <!-- 🛡️ 4. SEKME: TAKIMLAR -->
         <div id="takimlar" class="tab-content">
-            <h2>Takımlar</h2>
+            <h2>Ligdeki Takımlar</h2>
             <div class="table-wrapper">
                 <table>
                     <tr>
-                        <th>Takım Logosu</th>
+                        <th>Bayrak</th>
                         <th>Takım Adı</th>
-                        <th>Kaptan</th>
-                        <th>Stadyum</th>
-                        <th>Bilgi</th>
+                        <th>Kadro Durumu</th>
                     </tr>
-                    <tr>
-                        <td>🇹🇷</td>
-                        <td><b>Türkiye</b></td>
-                        <td>malemir827772</td>
-                        <td>Atatürk Olympic Stadium</td>
-                        <td><button class="info-btn" onclick="toggleInfo('turkiye-info')">İncele</button></td>
-                    </tr>
+                    <tr><td>🇫🇷</td><td><b>FRANCE @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇳🇱</td><td><b>NETHERLANDS @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇧🇷</td><td><b>BRAZIL @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇲🇦</td><td><b>MOROCCO @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇹🇷</td><td><b>TURKIYE @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇪🇸</td><td><b>SPAIN @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇩🇪</td><td><b>GERMANY @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇵🇹</td><td><b>PORTUGAL @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇲🇽</td><td><b>MEXICO @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇦🇷</td><td><b>ARGENTINA @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇧🇪</td><td><b>BELGIUM @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
                 </table>
-            </div>
-
-            <!-- TÜRKİYE INFO KUTUSU -->
-            <div id="turkiye-info" class="info-card">
-                <button class="info-close" onclick="toggleInfo('turkiye-info')">Kapat</button>
-                <h3>🇹🇷 Türkiye Takım Profili</h3>
-                
-                <div class="info-grid">
-                    <div class="info-section">
-                        <h4>Takım Kaptanı</h4>
-                        <p>malemir827772</p>
-                    </div>
-                    <div class="info-section">
-                        <h4>Stadyum</h4>
-                        <p>Atatürk Olympic Stadium</p>
-                    </div>
-                    <div class="info-section kadro">
-                        <h4>Güncel Kadro Yapısı</h4>
-                        <div class="info-kadro-list">
-                            <!-- BURAYA DOĞRUDAN ENGEL ALMAYAN RESİM SERVİSİNİ EKLEDİM -->
-                            <div class="mini-player-badge"><img src="https://www.roblox.com/headshot-thumbnail/image?userId=2026202769&width=48&height=48&format=png" class="mini-avatar"><b>malemir827772</b> <span class="badge att">ATT</span></div>
-                            <div class="mini-player-badge"><b>xlavi</b> <span class="badge att">ATT</span></div>
-                            <div class="mini-player-badge"><b>Megu</b> <span class="badge mid">MID</span></div>
-                            <div class="mini-player-badge"><b>Yalo</b> <span class="badge def">DEF</span></div>
-                            <div class="mini-player-badge"><b>clxev</b> <span class="badge def">CB</span></div>
-                            <div class="mini-player-badge"><b>Koleirass</b> <span class="badge def">CB</span></div>
-                            <div class="mini-player-badge"><b>Ronix</b> <span class="badge gk">GK</span></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
         <!-- 🏃‍♂️ 5. SEKME: OYUNCULAR -->
         <div id="oyuncular" class="tab-content">
-            <h2>Oyuncular</h2>
+            <h2>Oyuncu Listesi</h2>
             <div class="table-wrapper">
-                <table>
-                    <tr>
-                        <th>Oyuncu Adı</th>
-                        <th>Takım</th>
-                        <th>Pozisyon</th>
-                        <th>Reyting</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="player-flex">
-                                <!-- ROBLOX AMBLEM ENGELİNİ AŞAN GÜVENLİ LİNK -->
-                                <img src="https://www.roblox.com/headshot-thumbnail/image?userId=2026202769&width=100&height=100&format=png" alt="malemir827772" class="roblox-avatar">
-                                <b>malemir827772</b>
-                            </div>
-                        </td>
-                        <td>Türkiye</td>
-                        <td><span class="badge att">ATT</span></td>
-                        <td>80</td> 
-                    </tr>
-                    <tr>
-                        <td>xlavi</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge att">ATT</span></td>
-                        <td>84</td>
-                    </tr>
-                    <tr>
-                        <td>Megu</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge mid">MID</span></td>
-                        <td>83</td>
-                    </tr>
-                    <tr>
-                        <td>Yalo</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge def">DEF</span></td>
-                        <td>85</td>
-                    </tr>
-                    <tr>
-                        <td>clxev</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge def">CB</span></td>
-                        <td>84</td>
-                    </tr>
-                    <tr>
-                        <td>Koleirass</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge def">CB</span></td> 
-                        <td>85</td>
-                    </tr>
-                    <tr>
-                        <td>Ronix</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge gk">GK</span></td>
-                        <td>85</td>
-                    </tr>
-                </table>
+                <div class="no-data">Geçmiş silindi. Henüz lige kayıtlı aktif oyuncu bulunmamaktadır.</div>
             </div>
         </div>
 
@@ -524,29 +298,7 @@
         <div id="istatistikler" class="tab-content">
             <h2>Gol & Asist Krallığı</h2>
             <div class="table-wrapper">
-                <table>
-                    <tr>
-                        <th>#</th>
-                        <th>Oyuncu</th>
-                        <th>Takım</th>
-                        <th>Gol</th>
-                        <th>Asist</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>malemir827772</td>
-                        <td>Türkiye</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>xlavi</td>
-                        <td>Türkiye</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                </table>
+                <div class="no-data">Lig henüz başlamadığı için istatistik bulunmuyor.</div>
             </div>
         </div>
 
@@ -554,56 +306,7 @@
         <div id="transferler" class="tab-content">
             <h2>Transfer Merkezi</h2>
             <div class="table-wrapper">
-                <table>
-                    <tr>
-                        <th>Oyuncu</th>
-                        <th>Geldiği Takım</th>
-                        <th>Gittiği Takım</th>
-                        <th>Durum</th>
-                    </tr>
-                    <tr>
-                        <td>malemir827772</td>
-                        <td>Free Agent</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge signed">Signed</span></td>
-                    </tr>
-                    <tr>
-                        <td>xlavi</td>
-                        <td>Free Agent</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge signed">Signed</span></td>
-                    </tr>
-                    <tr>
-                        <td>Megu</td>
-                        <td>Free Agent</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge signed">Signed</span></td>
-                    </tr>
-                    <tr>
-                        <td>Yalo</td>
-                        <td>Free Agent</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge signed">Signed</span></td>
-                    </tr>
-                    <tr>
-                        <td>clxev</td>
-                        <td>Free Agent</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge signed">Signed</span></td>
-                    </tr>
-                    <tr>
-                        <td>Koleirass</td>
-                        <td>Free Agent</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge signed">Signed</span></td>
-                    </tr>
-                    <tr>
-                        <td>Ronix</td>
-                        <td>Free Agent</td>
-                        <td>Türkiye</td>
-                        <td><span class="badge signed">Signed</span></td>
-                    </tr>
-                </table>
+                <div class="no-data">Transfer dönemi açıldığında hareketler burada listelenecektir.</div>
             </div>
         </div>
 
@@ -619,15 +322,6 @@
 
             document.getElementById(tabId).classList.add('active');
             evt.currentTarget.classList.add('active');
-        }
-
-        function toggleInfo(infoId) {
-            let card = document.getElementById(infoId);
-            if (card.style.display === "block") {
-                card.style.display = "none";
-            } else {
-                card.style.display = "block";
-            }
         }
     </script>
 
