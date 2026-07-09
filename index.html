@@ -7,15 +7,15 @@
     <style>
         /* BEYAZ TEMA (LIGHT MODE) AYARLARI */
         :root {
-            --primary-color: #1d4ed8; /* Canlı Mavi */
+            --primary-color: #1d4ed8; 
             --navbar-bg: #ffffff;
             --navbar-border: #e2e8f0;
-            --body-bg: #f8fafc; /* Açık Gri/Beyaz Arka Plan */
+            --body-bg: #f8fafc; 
             --card-bg: #ffffff;
-            --text-main: #0f172a; /* Koyu Gri/Siyah Yazı */
+            --text-main: #0f172a; 
             --text-muted: #64748b;
             --border-color: #e2e8f0;
-            --banner-gradient: linear-gradient(135px, #1e3a8a 0%, #3b82f6 100%); /* Premium Mavi Banner */
+            --banner-gradient: linear-gradient(135px, #1e3a8a 0%, #3b82f6 100%); 
         }
 
         body {
@@ -58,7 +58,7 @@
             font-size: 18px;
             font-weight: 900;
             letter-spacing: 1px;
-            color: #1e3a8a; /* Beyaz temada okunması için koyu mavi yapıldı */
+            color: #1e3a8a; 
         }
 
         .nav-links {
@@ -216,13 +216,62 @@
         .team-row {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             font-weight: 700;
             color: var(--text-main);
         }
 
-        .flag-box {
-            font-size: 20px;
+        .team-logo {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        /* BADGE VE OYUNCU STİLLERİ */
+        .pos-badge {
+            background-color: #dc2626;
+            color: white;
+            padding: 4px 8px;
+            font-weight: 700;
+            font-size: 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .status-badge.signed {
+            background-color: #dcfce7;
+            color: #16a34a;
+            padding: 4px 8px;
+            font-weight: 700;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .rating-text {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .player-avatar-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .player-avatar-placeholder {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
         }
 
         .no-data {
@@ -259,6 +308,7 @@
 </head>
 <body>
 
+    <!-- ÜST MENÜ -->
     <nav class="navbar">
         <div class="logo-area">
             <div class="logo-badge">FIFA</div>
@@ -277,6 +327,7 @@
 
     <div class="container">
 
+        <!-- 🏠 1. SEKME: ANA SAYFA -->
         <div id="ana-sayfa" class="tab-content active">
             <div class="hero-banner">
                 <div class="trophy-icon">🏆</div>
@@ -286,12 +337,13 @@
 
             <div class="quick-stats">
                 <div class="stat-box"><h3>Katılan Ülke</h3><p>11</p></div>
-                <div class="stat-box"><h3>Toplam Oyuncu</h3><p>0</p></div> 
+                <div class="stat-box"><h3>Toplam Oyuncu</h3><p>2</p></div> 
                 <div class="stat-box"><h3>Oynanan Maç</h3><p>0</p></div>
                 <div class="stat-box"><h3>Turnuva Golü</h3><p>0</p></div>
             </div>
         </div>
 
+        <!-- 📊 2. SEKME: PUAN DURUMU -->
         <div id="puan-durumu" class="tab-content">
             <h2>Grup Puan Durumu</h2>
             <div class="table-wrapper">
@@ -308,21 +360,22 @@
                         <th>AV</th>
                         <th>P</th>
                     </tr>
-                    <tr><td>1</td><td><div class="team-row"><span class="flag-box">🇫🇷</span>FRANCE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>2</td><td><div class="team-row"><span class="flag-box">🇳🇱</span>NETHERLANDS @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>3</td><td><div class="team-row"><span class="flag-box">🇧🇷</span>BRAZIL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>4</td><td><div class="team-row"><span class="flag-box">🇲🇦</span>MOROCCO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>5</td><td><div class="team-row"><span class="flag-box">🇹🇷</span>TURKIYE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>6</td><td><div class="team-row"><span class="flag-box">🇪🇸</span>SPAIN @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>7</td><td><div class="team-row"><span class="flag-box">🇩🇪</span>GERMANY @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>8</td><td><div class="team-row"><span class="flag-box">🇵🇹</span>PORTUGAL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>9</td><td><div class="team-row"><span class="flag-box">🇲🇽</span>MEXICO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>10</td><td><div class="team-row"><span class="flag-box">🇦🇷</span>ARGENTINA @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>11</td><td><div class="team-row"><span class="flag-box">🇧🇪</span>BELGIUM @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>1</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/8/86/French_Football_Federation_logo.svg" alt="FR">FRANCE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>2</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Netherlands_National_Football_Team_Logo.svg" alt="NL">NETHERLANDS @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>3</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/9/9b/CBF_logo.svg" alt="BR">BRAZIL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>4</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/0/05/Morocco_national_football_team_badge.svg" alt="MA">MOROCCO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>5</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/b/b1/Turkish_Football_Federation_crest.svg" alt="TR">TURKIYE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>6</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/3/31/Spain_national_football_team_badge.svg" alt="ES">SPAIN @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>7</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/e/e3/DFB_logo.svg" alt="DE">GERMANY @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>8</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/5/5f/Portuguese_Football_Federation_logo.svg" alt="PT">PORTUGAL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>9</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/1/19/Mexico_national_football_team_crest.svg" alt="MX">MEXICO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>10</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Asociaci%C3%B3n_del_F%C3%BAtbol_Argentino_%28logo%29.svg" alt="AR">ARGENTINA @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>11</td><td><div class="team-row"><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Royal_Belgian_FA_logo_2019.svg" alt="BE">BELGIUM @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                 </table>
             </div>
         </div>
 
+        <!-- 🗓️ 3. SEKME: FİKSTÜR -->
         <div id="fikstur" class="tab-content">
             <h2>Grup Maçları Fikstürü</h2>
             <div class="table-wrapper">
@@ -330,37 +383,79 @@
             </div>
         </div>
 
+        <!-- 🛡️ 4. SEKME: TAKIMLAR -->
         <div id="takimlar" class="tab-content">
             <h2>Turnuva Takımları</h2>
             <div class="table-wrapper">
                 <table>
                     <tr>
-                        <th>Bayrak</th>
+                        <th>Logo</th>
                         <th>Takım Adı</th>
                         <th>Resmi Kadro Durumu</th>
                     </tr>
-                    <tr><td>🇫🇷</td><td><b style="color:var(--text-main)">FRANCE @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇳🇱</td><td><b style="color:var(--text-main)">NETHERLANDS @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇧🇷</td><td><b style="color:var(--text-main)">BRAZIL @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇲🇦</td><td><b style="color:var(--text-main)">MOROCCO @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇹🇷</td><td><b style="color:var(--text-main)">TURKIYE @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇪🇸</td><td><b style="color:var(--text-main)">SPAIN @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇩🇪</td><td><b style="color:var(--text-main)">GERMANY @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇵🇹</td><td><b style="color:var(--text-main)">PORTUGAL @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇲🇽</td><td><b style="color:var(--text-main)">MEXICO @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇦🇷</td><td><b style="color:var(--text-main)">ARGENTINA @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
-                    <tr><td>🇧🇪</td><td><b style="color:var(--text-main)">BELGIUM @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/8/86/French_Football_Federation_logo.svg" alt="FR"></td><td><b style="color:var(--text-main)">FRANCE @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Netherlands_National_Football_Team_Logo.svg" alt="NL"></td><td><b style="color:var(--text-main)">NETHERLANDS @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/9/9b/CBF_logo.svg" alt="BR"></td><td><b style="color:var(--text-main)">BRAZIL @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/0/05/Morocco_national_football_team_badge.svg" alt="MA"></td><td><b style="color:var(--text-main)">MOROCCO @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/b/b1/Turkish_Football_Federation_crest.svg" alt="TR"></td><td><b style="color:var(--text-main)">TURKIYE @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirildi (2 Oyuncu)</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/3/31/Spain_national_football_team_badge.svg" alt="ES"></td><td><b style="color:var(--text-main)">SPAIN @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/e/e3/DFB_logo.svg" alt="DE"></td><td><b style="color:var(--text-main)">GERMANY @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/5/5f/Portuguese_Football_Federation_logo.svg" alt="PT"></td><td><b style="color:var(--text-main)">PORTUGAL @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/1/19/Mexico_national_football_team_crest.svg" alt="MX"></td><td><b style="color:var(--text-main)">MEXICO @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Asociaci%C3%B3n_del_F%C3%BAtbol_Argentino_%28logo%29.svg" alt="AR"></td><td><b style="color:var(--text-main)">ARGENTINA @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td><img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Royal_Belgian_FA_logo_2019.svg" alt="BE"></td><td><b style="color:var(--text-main)">BELGIUM @</b></td><td><i style="color: var(--text-muted);">Kadro Bildirilmedi</i></td></tr>
                 </table>
             </div>
         </div>
 
+        <!-- 🏃‍♂️ 5. SEKME: OYUNCULAR -->
         <div id="oyuncular" class="tab-content">
             <h2>Milli Sporcular</h2>
             <div class="table-wrapper">
-                <div class="no-data">Tüm eski oyuncular temizlendi. Dünya Kupası için yeni lisans kayıtları bekleniyor.</div>
+                <table>
+                    <tr>
+                        <th>Oyuncu Adı</th>
+                        <th>Takım</th>
+                        <th>Pozisyon</th>
+                        <th>Reyting</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="player-avatar-container">
+                                <div class="player-avatar-placeholder">👤</div>
+                                <span>malemir827772</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="team-row">
+                                <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/b/b1/Turkish_Football_Federation_crest.svg" alt="TR">
+                                <span>Türkiye</span>
+                            </div>
+                        </td>
+                        <td><span class="pos-badge">ATT</span></td>
+                        <td><span class="rating-text">80</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="player-avatar-container">
+                                <div class="player-avatar-placeholder">👤</div>
+                                <span>xlavi</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="team-row">
+                                <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/b/b1/Turkish_Football_Federation_crest.svg" alt="TR">
+                                <span>Türkiye</span>
+                            </div>
+                        </td>
+                        <td><span class="pos-badge">ATT</span></td>
+                        <td><span class="rating-text">84</span></td>
+                    </tr>
+                </table>
             </div>
         </div>
 
+        <!-- 📈 6. SEKME: İSTATİSTİKLER -->
         <div id="istatistikler" class="tab-content">
             <h2>Altın Ayakkabı Yarışı (Gol & Asist)</h2>
             <div class="table-wrapper">
@@ -368,15 +463,57 @@
             </div>
         </div>
 
+        <!-- 🔄 7. SEKME: TRANSFERLER -->
         <div id="transferler" class="tab-content">
             <h2>Milli Takım Kamp Seçimleri</h2>
             <div class="table-wrapper">
-                <div class="no-data">Oyuncular milli takım kamplarını seçtiğinde listelenecektir.</div>
+                <table>
+                    <tr>
+                        <th>Oyuncu</th>
+                        <th>Eski Kulübü</th>
+                        <th>Seçtiği Milli Takım</th>
+                        <th>Durum</th>
+                    </tr>
+                    <tr>
+                        <td><b>xlavi</b></td>
+                        <td>Free Agent</td>
+                        <td>
+                            <div class="team-row">
+                                <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/b/b1/Turkish_Football_Federation_crest.svg" alt="TR">
+                                <span>Türkiye</span>
+                            </div>
+                        </td>
+                        <td><span class="status-badge signed">Signed</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Koleirass</b></td>
+                        <td>Free Agent</td>
+                        <td>
+                            <div class="team-row">
+                                <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/b/b1/Turkish_Football_Federation_crest.svg" alt="TR">
+                                <span>Türkiye</span>
+                            </div>
+                        </td>
+                        <td><span class="status-badge signed">Signed</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Ronix</b></td>
+                        <td>Free Agent</td>
+                        <td>
+                            <div class="team-row">
+                                <img class="team-logo" src="https://upload.wikimedia.org/wikipedia/en/b/b1/Turkish_Football_Federation_crest.svg" alt="TR">
+                                <span>Türkiye</span>
+                            </div>
+                        </td>
+                        <td><span class="status-badge signed">Signed</span></td>
+                    </tr>
+                </table>
             </div>
         </div>
 
     </div>
 
+    <!-- 📌 Sağ En Alttaki Lisans Logosu Elemanı -->
     <div class="bottom-right-logo">R</div>
 
     <script>
