@@ -2,58 +2,46 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EUROPEAN SOCCER LEAGUE</title>
+    <title>ESL World Cup</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #0f172a; color: white; margin: 0; }
-        .navbar { display: flex; gap: 20px; padding: 20px; background: #1e293b; border-bottom: 2px solid #334155; }
+        body { font-family: sans-serif; background-color: #0f172a; color: white; margin: 0; }
+        .navbar { display: flex; gap: 20px; padding: 20px; background: #1e293b; }
         .nav-btn { color: #94a3b8; cursor: pointer; text-transform: uppercase; font-weight: bold; border: none; background: none; }
         .nav-btn.active { color: #fff; }
         .tab-content { display: none; padding: 20px; }
         .tab-content.active { display: block; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #1e293b; }
+        table { width: 100%; border-collapse: collapse; background: #1e293b; }
         th, td { padding: 15px; border-bottom: 1px solid #334155; text-align: left; }
-        .team-row { display: flex; align-items: center; gap: 10px; }
-        .team-logo { width: 30px; height: 20px; }
+        .team-logo { width: 30px; height: 20px; margin-right: 10px; }
     </style>
 </head>
 <body>
 
 <div class="navbar">
-    <button class="nav-btn active" onclick="openTab(event, 'giris')">Giriş</button>
-    <button class="nav-btn" onclick="openTab(event, 'gruplar')">Gruplar</button>
-    <button class="nav-btn" onclick="openTab(event, 'fikstur')">Fikstür</button>
-    <button class="nav-btn" onclick="openTab(event, 'takimlar')">Takımlar</button>
-    <button class="nav-btn" onclick="openTab(event, 'oyuncular')">Oyuncular</button>
-    <button class="nav-btn" onclick="openTab(event, 'istatistikler')">İstatistikler</button>
-    <button class="nav-btn" onclick="openTab(event, 'transferler')">Transferler</button>
+    <button class="nav-btn active" onclick="openTab(event, 'gruplar')">Gruplar</button>
 </div>
 
-<div id="giris" class="tab-content active"><h1>HOŞ GELDİNİZ</h1></div>
-
-<div id="gruplar" class="tab-content">
+<div id="gruplar" class="tab-content active">
     <table>
-        <tr><th>#</th><th>TAKIM</th><th>O</th><th>G</th><th>B</th><th>M</th><th>AG</th><th>YG</th><th>AV</th><th>P</th></tr>
-        <tr><td>1</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/fr.png"> FRANCE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>2</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/nl.png"> NETHERLANDS @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>3</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/br.png"> BRAZIL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>4</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/ma.png"> MOROCCO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>5</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/tr.png"> TURKIYE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>6</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/es.png"> SPAIN @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>7</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/de.png"> GERMANY @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>8</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/pt.png"> PORTUGAL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>9</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/mx.png"> MEXICO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>10</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/ar.png"> ARGENTINA @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-        <tr><td>11</td><td><div class="team-row"><img class="team-logo" src="https://flagcdn.com/w40/be.png"> BELGIUM @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><th>TAKIM</th></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/fr.png"> FRANCE @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/nl.png"> NETHERLANDS @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/br.png"> BRAZIL @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/ma.png"> MOROCCO @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/tr.png"> TURKIYE @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/es.png"> SPAIN @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/de.png"> GERMANY @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/pt.png"> PORTUGAL @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/mx.png"> MEXICO @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/ar.png"> ARGENTINA @</td></tr>
+        <tr><td><img class="team-logo" src="https://flagcdn.com/w40/be.png"> BELGIUM @</td></tr>
     </table>
 </div>
 
 <script>
     function openTab(evt, tabId) {
         document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
         document.getElementById(tabId).classList.add('active');
-        evt.currentTarget.classList.add('active');
     }
 </script>
 </body>
