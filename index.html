@@ -7,15 +7,15 @@
     <style>
         /* BEYAZ TEMA (LIGHT MODE) AYARLARI */
         :root {
-            --primary-color: #1d4ed8; /* Canlı Mavi */
+            --primary-color: #1d4ed8; 
             --navbar-bg: #ffffff;
             --navbar-border: #e2e8f0;
-            --body-bg: #f8fafc; /* Açık Gri/Beyaz Arka Plan */
+            --body-bg: #f8fafc; 
             --card-bg: #ffffff;
-            --text-main: #0f172a; /* Koyu Gri/Siyah Yazı */
+            --text-main: #0f172a; 
             --text-muted: #64748b;
             --border-color: #e2e8f0;
-            --banner-gradient: linear-gradient(135px, #1e3a8a 0%, #3b82f6 100%); /* Premium Mavi Banner */
+            --banner-gradient: linear-gradient(135px, #1e3a8a 0%, #3b82f6 100%); 
         }
 
         body {
@@ -58,7 +58,7 @@
             font-size: 18px;
             font-weight: 900;
             letter-spacing: 1px;
-            color: #1e3a8a; /* Beyaz temada okunması için koyu mavi yapıldı */
+            color: #1e3a8a; 
         }
 
         .nav-links {
@@ -126,9 +126,12 @@
             margin: 0;
         }
 
-        .trophy-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
+        /* GÜNCELLENEN KUPA GÖRSELİ */
+        .cup-image {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
             animation: float 3s ease-in-out infinite;
         }
 
@@ -233,7 +236,6 @@
             font-size: 15px;
         }
 
-        /* 📌 SAĞ EN ALTA SABİTLENEN LİSANS LOGOSU */
         .bottom-right-logo {
             position: fixed;
             bottom: 25px;
@@ -279,7 +281,7 @@
 
         <div id="ana-sayfa" class="tab-content active">
             <div class="hero-banner">
-                <div class="trophy-icon">🏆</div>
+                <img src="https://assets.goal.com/images/v3/blt992b8686f05b0d5c/FIFA_World_Cup_2026_trophy.jpg" alt="World Cup 2026 Trophy" class="cup-image">
                 <h1>EUROPEAN SOCCER LEAGUE</h1>
                 <p>Milli Takımlar Sahneye Çıkıyor! Dünya Kupası Heyecanını Canlı Takip Et.</p>
             </div>
@@ -391,6 +393,5 @@
             evt.currentTarget.classList.add('active');
         }
     </script>
-
 </body>
 </html>
