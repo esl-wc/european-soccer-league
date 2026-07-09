@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>European Soccer League - WC26</title>
+    <title>FIFA World Cup - ESL Edition</title>
     <style>
-        /* ESL KIRMIZI TEMA AYARLARI */
+        /* DÜNYA KUPASI PREMIUM TEMASI */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d0e12; 
+            background-color: #060913; /* Derin Gece Mavisi */
             color: #ffffff;
         }
 
@@ -18,25 +18,35 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #13161f; 
-            padding: 12px 40px;
-            border-bottom: 4px solid #dc2626; /* ESL KIRMIZI ÇİZGİ */
+            background-color: #0b1120; 
+            padding: 15px 40px;
+            border-bottom: 4px solid #d4af37; /* DÜNYA KUPASI ALTIN ÇIZGİSİ */
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+        }
+
+        .logo-badge {
+            background-color: #d4af37;
+            color: #060913;
+            padding: 4px 10px;
+            font-weight: 900;
+            border-radius: 4px;
+            font-size: 14px;
         }
 
         .logo-text {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             letter-spacing: 1.5px;
-            color: #dc2626; /* ESL KIRMIZI */
+            color: #ffffff;
         }
 
         .nav-links {
@@ -58,9 +68,9 @@
         }
 
         .nav-links button:hover, .nav-links button.active {
-            color: #ffffff;
-            background-color: #1e2433;
-            border-bottom: 3px solid #dc2626; 
+            color: #d4af37;
+            background-color: #1e293b;
+            border-bottom: 3px solid #d4af37; 
         }
 
         /* ANA KONTEYNER */
@@ -78,32 +88,48 @@
             display: block;
         }
 
-        /* DÜNYA KUPASI AFİŞİ */
+        /* DÜNYA KUPASI ÖZEL BANNER */
         .hero-banner {
-            background: linear-gradient(135px, #dc2626 0%, #991b1b 100%);
-            padding: 50px 40px;
-            border-radius: 16px;
+            background: linear-gradient(135px, #0f172a 0%, #1e3a8a 40%, #1d4ed8 70%, #d4af37 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
             text-align: center;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-banner h1 {
-            font-size: 46px;
+            font-size: 50px;
             margin: 0 0 12px 0;
             text-transform: uppercase;
             font-weight: 900;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            letter-spacing: 4px;
+            color: #ffffff;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
         }
 
         .hero-banner p {
-            font-size: 18px;
-            color: #ffffff;
+            font-size: 20px;
+            color: #f8fafc;
             font-weight: 600;
             margin: 0;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+        }
+
+        /* KUPA İKONU DEKORASYON */
+        .trophy-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
 
         /* ÖZET KUTULARI */
@@ -115,11 +141,12 @@
         }
 
         .stat-box {
-            background-color: #13161f;
-            padding: 20px;
-            border-radius: 12px;
+            background-color: #0b1120;
+            padding: 22px;
+            border-radius: 14px;
             text-align: center;
-            border: 1px solid #232936;
+            border: 1px solid #1e293b;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .stat-box h3 {
@@ -127,31 +154,33 @@
             font-size: 13px;
             color: #94a3b8;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .stat-box p {
-            margin: 8px 0 0 0;
-            font-size: 30px;
-            font-weight: bold;
-            color: #dc2626; 
+            margin: 10px 0 0 0;
+            font-size: 32px;
+            font-weight: 900;
+            color: #d4af37; 
         }
 
         /* TABLOLAR VE BAŞLIKLAR */
         h2 {
-            font-size: 22px;
+            font-size: 24px;
             text-transform: uppercase;
-            border-left: 5px solid #dc2626; 
+            border-left: 5px solid #d4af37; 
             padding-left: 15px;
             margin-bottom: 25px;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         .table-wrapper {
-            background-color: #13161f;
-            border-radius: 12px;
+            background-color: #0b1120;
+            border-radius: 14px;
             overflow: hidden;
-            border: 1px solid #232936;
+            border: 1px solid #1e293b;
             margin-bottom: 30px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
         }
 
         table {
@@ -160,29 +189,42 @@
         }
 
         th, td {
-            padding: 15px 20px;
+            padding: 16px 20px;
             text-align: left;
-            border-bottom: 1px solid #1e2433;
+            border-bottom: 1px solid #1e293b;
             vertical-align: middle;
         }
 
         th {
-            background-color: #1a1f2c;
+            background-color: #111827;
             color: #94a3b8;
             font-size: 13px;
             text-transform: uppercase;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         tr:hover {
-            background-color: #1a202c;
+            background-color: #151f32;
+        }
+
+        .team-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+        }
+
+        .flag-box {
+            font-size: 20px;
         }
 
         .no-data {
-            padding: 30px;
-            color: #94a3b8;
+            padding: 40px;
+            color: #64748b;
             text-align: center;
             font-weight: 600;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -191,11 +233,12 @@
     <!-- ÜST MENÜ -->
     <nav class="navbar">
         <div class="logo-area">
-            <div class="logo-text">ESL | EUROPEAN SOCCER LEAGUE</div>
+            <div class="logo-badge">FIFA</div>
+            <div class="logo-text">WORLD CUP CENTER</div>
         </div>
         <div class="nav-links">
-            <button class="nav-btn active" onclick="openTab(event, 'ana-sayfa')">Ana Sayfa</button>
-            <button class="nav-btn" onclick="openTab(event, 'puan-durumu')">Puan Durumu</button>
+            <button class="nav-btn active" onclick="openTab(event, 'ana-sayfa')">Giriş</button>
+            <button class="nav-btn" onclick="openTab(event, 'puan-durumu')">Gruplar</button>
             <button class="nav-btn" onclick="openTab(event, 'fikstur')">Fikstür</button>
             <button class="nav-btn" onclick="openTab(event, 'takimlar')">Takımlar</button>
             <button class="nav-btn" onclick="openTab(event, 'oyuncular')">Oyuncular</button>
@@ -209,21 +252,22 @@
         <!-- 🏠 1. SEKME: ANA SAYFA -->
         <div id="ana-sayfa" class="tab-content active">
             <div class="hero-banner">
-                <h1>EUROPEAN SOCCER LEAGUE</h1>
-                <p>Yeni Sezon Başladı! Tüm takımlar sıfırlandı, yeni oyuncu kayıtları bekleniyor.</p>
+                <div class="trophy-icon">🏆</div>
+                <h1>FIFA WORLD CUP</h1>
+                <p>Milli Takımlar Sahneye Çıkıyor! Dünya Kupası Heyecanını Canlı Takip Et.</p>
             </div>
 
             <div class="quick-stats">
-                <div class="stat-box"><h3>Toplam Takım</h3><p>11</p></div>
-                <div class="stat-box"><h3>Kayıtlı Oyuncu</h3><p>0</p></div> 
+                <div class="stat-box"><h3>Katılan Ülke</h3><p>11</p></div>
+                <div class="stat-box"><h3>Toplam Oyuncu</h3><p>0</p></div> 
                 <div class="stat-box"><h3>Oynanan Maç</h3><p>0</p></div>
-                <div class="stat-box"><h3>Toplam Gol</h3><p>0</p></div>
+                <div class="stat-box"><h3>Turnuva Golü</h3><p>0</p></div>
             </div>
         </div>
 
         <!-- 📊 2. SEKME: PUAN DURUMU -->
         <div id="puan-durumu" class="tab-content">
-            <h2>Puan Durumu</h2>
+            <h2>Grup Puan Durumu</h2>
             <div class="table-wrapper">
                 <table>
                     <tr>
@@ -238,75 +282,75 @@
                         <th>AV</th>
                         <th>P</th>
                     </tr>
-                    <tr><td>1</td><td><b>FRANCE @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>2</td><td><b>NETHERLANDS @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>3</td><td><b>BRAZIL @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>4</td><td><b>MOROCCO @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>5</td><td><b>TURKIYE @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>6</td><td><b>SPAIN @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>7</td><td><b>GERMANY @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>8</td><td><b>PORTUGAL @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>9</td><td><b>MEXICO @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>10</td><td><b>ARGENTINA @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>11</td><td><b>BELGIUM @</b></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>1</td><td><div class="team-row"><span class="flag-box">🇫🇷</span>FRANCE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>2</td><td><div class="team-row"><span class="flag-box">🇳🇱</span>NETHERLANDS @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>3</td><td><div class="team-row"><span class="flag-box">🇧🇷</span>BRAZIL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>4</td><td><div class="team-row"><span class="flag-box">🇲🇦</span>MOROCCO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>5</td><td><div class="team-row"><span class="flag-box">🇹🇷</span>TURKIYE @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>6</td><td><div class="team-row"><span class="flag-box">🇪🇸</span>SPAIN @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>7</td><td><div class="team-row"><span class="flag-box">🇩🇪</span>GERMANY @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>8</td><td><div class="team-row"><span class="flag-box">🇵🇹</span>PORTUGAL @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>9</td><td><div class="team-row"><span class="flag-box">🇲🇽</span>MEXICO @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>10</td><td><div class="team-row"><span class="flag-box">🇦🇷</span>ARGENTINA @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>11</td><td><div class="team-row"><span class="flag-box">🇧🇪</span>BELGIUM @</div></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                 </table>
             </div>
         </div>
 
         <!-- 🗓️ 3. SEKME: FİKSTÜR -->
         <div id="fikstur" class="tab-content">
-            <h2>Fikstür</h2>
+            <h2>Grup Maçları Fikstürü</h2>
             <div class="table-wrapper">
-                <div class="no-data">Yeni sezon fikstürü yakında eklenecektir.</div>
+                <div class="no-data">Dünya Kupası kura çekimi ve maç takvimi yakında eklenecektir.</div>
             </div>
         </div>
 
         <!-- 🛡️ 4. SEKME: TAKIMLAR -->
         <div id="takimlar" class="tab-content">
-            <h2>Ligdeki Takımlar</h2>
+            <h2>Turnuva Takımları</h2>
             <div class="table-wrapper">
                 <table>
                     <tr>
-                        <th>Bayrak</th>
+                        <th>Ülke</th>
                         <th>Takım Adı</th>
-                        <th>Kadro Durumu</th>
+                        <th>Resmi Kadro Durumu</th>
                     </tr>
-                    <tr><td>🇫🇷</td><td><b>FRANCE @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇳🇱</td><td><b>NETHERLANDS @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇧🇷</td><td><b>BRAZIL @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇲🇦</td><td><b>MOROCCO @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇹🇷</td><td><b>TURKIYE @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇪🇸</td><td><b>SPAIN @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇩🇪</td><td><b>GERMANY @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇵🇹</td><td><b>PORTUGAL @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇲🇽</td><td><b>MEXICO @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇦🇷</td><td><b>ARGENTINA @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
-                    <tr><td>🇧🇪</td><td><b>BELGIUM @</b></td><td><i style="color: #94a3b8;">Oyuncu Yok</i></td></tr>
+                    <tr><td>🇫🇷</td><td><b>FRANCE @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇳🇱</td><td><b>NETHERLANDS @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇧🇷</td><td><b>BRAZIL @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇲🇦</td><td><b>MOROCCO @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇹🇷</td><td><b>TURKIYE @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇪🇸</td><td><b>SPAIN @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇩🇪</td><td><b>GERMANY @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇵🇹</td><td><b>PORTUGAL @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇲🇽</td><td><b>MEXICO @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇦🇷</td><td><b>ARGENTINA @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
+                    <tr><td>🇧🇪</td><td><b>BELGIUM @</b></td><td><i style="color: #64748b;">Kadro Bildirilmedi</i></td></tr>
                 </table>
             </div>
         </div>
 
         <!-- 🏃‍♂️ 5. SEKME: OYUNCULAR -->
         <div id="oyuncular" class="tab-content">
-            <h2>Oyuncu Listesi</h2>
+            <h2>Milli Sporcular</h2>
             <div class="table-wrapper">
-                <div class="no-data">Geçmiş silindi. Henüz lige kayıtlı aktif oyuncu bulunmamaktadır.</div>
+                <div class="no-data">Tüm eski oyuncular temizlendi. Dünya Kupası için yeni lisans kayıtları bekleniyor.</div>
             </div>
         </div>
 
         <!-- 📈 6. SEKME: İSTATİSTİKLER -->
         <div id="istatistikler" class="tab-content">
-            <h2>Gol & Asist Krallığı</h2>
+            <h2>Altın Ayakkabı Yarışı (Gol & Asist)</h2>
             <div class="table-wrapper">
-                <div class="no-data">Lig henüz başlamadığı için istatistik bulunmuyor.</div>
+                <div class="no-data">Turnuva henüz başlamadığı için istatistik tablosu boş.</div>
             </div>
         </div>
 
         <!-- 🔄 7. SEKME: TRANSFERLER -->
         <div id="transferler" class="tab-content">
-            <h2>Transfer Merkezi</h2>
+            <h2>Milli Takım Kamp Seçimleri</h2>
             <div class="table-wrapper">
-                <div class="no-data">Transfer dönemi açıldığında hareketler burada listelenecektir.</div>
+                <div class="no-data">Oyuncular milli takım kamplarını seçtiğinde listelenecektir.</div>
             </div>
         </div>
 
